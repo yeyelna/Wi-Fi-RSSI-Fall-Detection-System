@@ -7,7 +7,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Wi-Fi Fall Detection Dashboard", page_icon="📡", layout="wide")
 
-DEFAULT_TRAINVAL_DIR = r"C:\Users\nurel\Downloads\ELLYANA FYP\Coding\LGBM_8_TrainOnly\trainval"
+DEFAULT_TRAINVAL_DIR = Path("trainval")
 
 DISPLAY_NAME = {
     "FFT": "FFT",
