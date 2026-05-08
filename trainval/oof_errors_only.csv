@@ -1,0 +1,343 @@
+Dataset,File,Event,Label,PredProb,PredLabel,Correct
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data32.mat,walk and fall,1,0.49223486356424573,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data36.mat,walk and fall,1,0.5070922362288609,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data36_aug1.mat,walk and fall,1,0.5010883497205948,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data37.mat,walk and fall,1,0.32113353151455415,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data37_aug1.mat,walk and fall,1,0.21324931775259556,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data38.mat,walk and fall,1,0.49897050117988717,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data41.mat,walk and fall,1,0.5092092835889745,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data41_aug1.mat,walk and fall,1,0.5092092835889745,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data49.mat,walk and fall,1,0.48685078481568106,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data54.mat,walk and fall,1,0.3018770599271046,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data57.mat,walk and fall,1,0.418318661053779,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data57_aug1.mat,walk and fall,1,0.47266831084659566,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data59.mat,walk and fall,1,0.4783460319827244,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data60.mat,walk and fall,1,0.5019179786453233,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data841_aug1.mat,sit and fall,1,0.507416581595906,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data854.mat,sit and fall,1,0.4964047917017226,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data864_aug1.mat,sit and fall,1,0.49720148298386185,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data866.mat,sit and fall,1,0.4305292656906746,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data866_aug1.mat,sit and fall,1,0.4210341382165595,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1652.mat,stumble,1,0.4814854682228122,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1652_aug1.mat,stumble,1,0.4814854682228122,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1654.mat,stumble,1,0.49956665341891715,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1654_aug1.mat,stumble,1,0.49956665341891715,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1659.mat,stumble,1,0.3957619946603962,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1659_aug1.mat,stumble,1,0.32234385626958467,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1666.mat,stumble,1,0.45880120684743014,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1666_aug1.mat,stumble,1,0.47557108419622107,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1667.mat,stumble,1,0.48614967699454004,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1673_aug1.mat,stumble,1,0.5068129785455933,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1677.mat,stumble,1,0.47897398216059084,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1677_aug1.mat,stumble,1,0.47897398216059084,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1678_aug1.mat,stumble,1,0.45306064118350353,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1679_aug1.mat,stumble,1,0.5037567449474903,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2461.mat,slipping,1,0.49714570509995276,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2461_aug1.mat,slipping,1,0.49714570509995276,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2466.mat,slipping,1,0.5008919177717805,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2466_aug1.mat,slipping,1,0.5008919177717805,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2467.mat,slipping,1,0.5037567449474903,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2467_aug1.mat,slipping,1,0.5037567449474903,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2475.mat,slipping,1,0.5019214105098212,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2475_aug1.mat,slipping,1,0.5019214105098212,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2478.mat,slipping,1,0.4862750490658379,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2478_aug1.mat,slipping,1,0.4862750490658379,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2479.mat,slipping,1,0.5029276594864396,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2479_aug1.mat,slipping,1,0.5086148072990405,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2483.mat,slipping,1,0.5049068200569476,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2483_aug1.mat,slipping,1,0.5049068200569476,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2486.mat,slipping,1,0.5021118116803815,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2486_aug1.mat,slipping,1,0.5021118116803815,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2488_aug1.mat,slipping,1,0.4963172229231078,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2489.mat,slipping,1,0.4102306856064207,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2489_aug1.mat,slipping,1,0.2107629654145554,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3274.mat,fainting,1,0.4738722428109836,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3274_aug1.mat,fainting,1,0.4738722428109836,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3282.mat,fainting,1,0.5003406933675384,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3282_aug1.mat,fainting,1,0.5003406933675384,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3283.mat,fainting,1,0.5049068491208951,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3283_aug1.mat,fainting,1,0.5032041844825256,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3290.mat,fainting,1,0.5003406933675384,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3290_aug1.mat,fainting,1,0.5003406933675384,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3291.mat,fainting,1,0.30579672139182373,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3292.mat,fainting,1,0.4939534290500668,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3292_aug1.mat,fainting,1,0.5000663262172531,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3298.mat,fainting,1,0.5066849888499079,0,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056.mat,sitting,0,0.5189697690515428,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug1.mat,sitting,0,0.5113664240896652,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug2.mat,sitting,0,0.5130681841062209,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug6.mat,sitting,0,0.5150447711684718,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug7.mat,sitting,0,0.5150447711684718,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug8.mat,sitting,0,0.5130681841062209,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057.mat,sitting,0,0.5169549372336145,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug7.mat,sitting,0,0.5186508029659952,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug8.mat,sitting,0,0.5132086723724635,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4059.mat,sitting,0,0.5103194358941247,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4059_aug1.mat,sitting,0,0.5103194358941247,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4059_aug4.mat,sitting,0,0.5103194358941247,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4059_aug5.mat,sitting,0,0.5127721790905733,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4059_aug6.mat,sitting,0,0.5103194358941247,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4059_aug8.mat,sitting,0,0.5127721790905733,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4060.mat,sitting,0,0.5517562033395643,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4060_aug1.mat,sitting,0,0.5491249554188871,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4060_aug3.mat,sitting,0,0.5522246935121575,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4060_aug6.mat,sitting,0,0.5425501321979802,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4060_aug7.mat,sitting,0,0.5425501321979802,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4060_aug8.mat,sitting,0,0.5535289746939415,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug1.mat,bending,0,0.5228538410272108,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug2.mat,bending,0,0.5240843860371456,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug3.mat,bending,0,0.5240843860371456,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug5.mat,bending,0,0.5264396638114393,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug8.mat,bending,0,0.5264396638114393,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194.mat,bending,0,0.753336619467492,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug1.mat,bending,0,0.7491318912002088,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug2.mat,bending,0,0.8381116028971032,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug3.mat,bending,0,0.7536783734326603,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug4.mat,bending,0,0.7934318815061095,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug5.mat,bending,0,0.7934318815061095,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug6.mat,bending,0,0.7562352178078673,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug7.mat,bending,0,0.7856662861042102,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug8.mat,bending,0,0.775008627114654,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4194_aug9.mat,bending,0,0.8151106676185673,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195.mat,bending,0,0.5480672426216225,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug5.mat,bending,0,0.5184697382632194,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug7.mat,bending,0,0.6602882241816249,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug9.mat,bending,0,0.5695508238092174,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(08) laying\data4329_aug1.mat,laying,0,0.5177973581243706,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(08) laying\data4329_aug5.mat,laying,0,0.5177973581243706,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(08) laying\data4329_aug9.mat,laying,0,0.5408367735370205,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4461_aug3.mat,kneeling,0,0.5986237421164642,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4461_aug4.mat,kneeling,0,0.6273295716665681,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4462_aug3.mat,kneeling,0,0.5256284000524833,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4462_aug9.mat,kneeling,0,0.5824548244861577,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463.mat,kneeling,0,0.5531902724052342,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug2.mat,kneeling,0,0.5531902724052342,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug3.mat,kneeling,0,0.6272833651223666,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug4.mat,kneeling,0,0.5803404709817567,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug5.mat,kneeling,0,0.5526362767979228,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug6.mat,kneeling,0,0.700681209611983,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug7.mat,kneeling,0,0.6876312434225214,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug8.mat,kneeling,0,0.5588810286738337,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(09) kneeling\data4463_aug9.mat,kneeling,0,0.5746814179426402,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596.mat,squatting,0,0.7008736151482534,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug1.mat,squatting,0,0.6106359623047225,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug2.mat,squatting,0,0.6933308131877297,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug3.mat,squatting,0,0.6940722162044745,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug4.mat,squatting,0,0.6149060258013274,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug5.mat,squatting,0,0.6493231910455284,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug6.mat,squatting,0,0.6933308131877297,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug7.mat,squatting,0,0.6197310623361209,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug8.mat,squatting,0,0.6154565600862031,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug9.mat,squatting,0,0.6243784353916053,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4597_aug6.mat,squatting,0,0.5140462314730053,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4597_aug7.mat,squatting,0,0.5140462314730053,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug1.mat,squatting,0,0.5513913657581092,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug2.mat,squatting,0,0.5513913657581092,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug3.mat,squatting,0,0.5335496638750439,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug4.mat,squatting,0,0.5549996656185456,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug5.mat,squatting,0,0.5549996656185456,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug6.mat,squatting,0,0.5549996656185456,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug7.mat,squatting,0,0.5549996656185456,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug8.mat,squatting,0,0.5513913657581092,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4598_aug9.mat,squatting,0,0.5335496638750439,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599.mat,squatting,0,0.8661283885802692,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug1.mat,squatting,0,0.8907045257595856,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug2.mat,squatting,0,0.8694222424120167,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug3.mat,squatting,0,0.8733727826226416,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug4.mat,squatting,0,0.8792307553131665,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug5.mat,squatting,0,0.880105935820251,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug6.mat,squatting,0,0.8501337229078075,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug7.mat,squatting,0,0.8845628909399663,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug8.mat,squatting,0,0.8845628909399663,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug9.mat,squatting,0,0.8999985634842703,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4600.mat,squatting,0,0.5972252153925154,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4600_aug6.mat,squatting,0,0.5417434532316033,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4600_aug7.mat,squatting,0,0.6697564381010204,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4600_aug8.mat,squatting,0,0.5511149116573646,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4731_aug3.mat,prostrating,0,0.5220936972154802,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4733.mat,prostrating,0,0.5331786287313685,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4733_aug1.mat,prostrating,0,0.7511008010638388,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4733_aug2.mat,prostrating,0,0.5522204783218619,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4733_aug4.mat,prostrating,0,0.5536407849323183,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4733_aug5.mat,prostrating,0,0.6986194178486611,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4733_aug7.mat,prostrating,0,0.5564487607531745,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734.mat,prostrating,0,0.5909087923569267,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug1.mat,prostrating,0,0.5942719261958703,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug2.mat,prostrating,0,0.6112882825152876,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug3.mat,prostrating,0,0.6203818306082385,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug4.mat,prostrating,0,0.69874032958292,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug5.mat,prostrating,0,0.5884151271242031,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug6.mat,prostrating,0,0.634446346732617,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug7.mat,prostrating,0,0.606055873681019,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug8.mat,prostrating,0,0.6173315754709802,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4734_aug9.mat,prostrating,0,0.5848806632217665,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735.mat,prostrating,0,0.7695050712935689,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug1.mat,prostrating,0,0.7132361668895216,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug2.mat,prostrating,0,0.7944168464620247,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug3.mat,prostrating,0,0.7132361668895216,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug4.mat,prostrating,0,0.7132361668895216,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug5.mat,prostrating,0,0.7561631149704888,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug6.mat,prostrating,0,0.7132361668895216,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug7.mat,prostrating,0,0.765442039181764,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug8.mat,prostrating,0,0.7343701158847454,1,0
+FFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(11) prostrating\data4735_aug9.mat,prostrating,0,0.7753073974499968,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data37.mat,walk and fall,1,0.23339248000323162,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data38.mat,walk and fall,1,0.48586078556335943,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data39_aug1.mat,walk and fall,1,0.48600676517926006,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data50.mat,walk and fall,1,0.49441523790980696,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data849.mat,sit and fall,1,0.49830101826544376,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data849_aug1.mat,sit and fall,1,0.49830101826544376,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data850.mat,sit and fall,1,0.43139909403140875,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data850_aug1.mat,sit and fall,1,0.43139909403140875,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data864.mat,sit and fall,1,0.4765881724151763,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data870.mat,sit and fall,1,0.3748401476547512,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data870_aug1.mat,sit and fall,1,0.3748401476547512,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2482.mat,slipping,1,0.49469471354691896,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2484.mat,slipping,1,0.3453130959497095,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2484_aug1.mat,slipping,1,0.3453130959497095,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(04) slipping\data2487.mat,slipping,1,0.48958363605377536,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3275.mat,fainting,1,0.47648272132513736,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3275_aug1.mat,fainting,1,0.22635159450457748,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3276.mat,fainting,1,0.45371281445019845,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3276_aug1.mat,fainting,1,0.45371281445019845,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3282.mat,fainting,1,0.4549030423928219,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3282_aug1.mat,fainting,1,0.4549030423928219,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3290.mat,fainting,1,0.4507616102028024,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3298.mat,fainting,1,0.46866788313714514,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3298_aug1.mat,fainting,1,0.4549030423928219,0,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056.mat,sitting,0,0.5044666451437843,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug6.mat,sitting,0,0.5283835583490953,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug7.mat,sitting,0,0.5283835583490953,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug8.mat,sitting,0,0.5283835583490953,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug9.mat,sitting,0,0.5283835583490953,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4060_aug8.mat,sitting,0,0.528840510640281,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191.mat,bending,0,0.5331859836706455,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug1.mat,bending,0,0.5331859836706455,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug2.mat,bending,0,0.529213669847322,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug3.mat,bending,0,0.5331859836706455,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug4.mat,bending,0,0.529213669847322,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug5.mat,bending,0,0.5275303787458907,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug6.mat,bending,0,0.5275303787458907,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug7.mat,bending,0,0.5275303787458907,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug8.mat,bending,0,0.5241471629214446,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug9.mat,bending,0,0.5275303787458907,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug1.mat,bending,0,0.6081455598043841,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug2.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug3.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug4.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug5.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug6.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug7.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug8.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug9.mat,bending,0,0.615986994127824,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug1.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug2.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug3.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug4.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug5.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug6.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug7.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug8.mat,squatting,0,0.5376921842188285,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4596_aug9.mat,squatting,0,0.5404702200574093,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug1.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug2.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug3.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug4.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug5.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug6.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug7.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug8.mat,squatting,0,0.6599886633843585,1,0
+STFT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(10) squatting\data4599_aug9.mat,squatting,0,0.6599886633843585,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data841_aug1.mat,sit and fall,1,0.5161970690527868,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data842.mat,sit and fall,1,0.31126721706598065,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data842_aug1.mat,sit and fall,1,0.31126721706598065,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data843.mat,sit and fall,1,0.20160135808465582,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data843_aug1.mat,sit and fall,1,0.21512611006448762,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data844.mat,sit and fall,1,0.31792452734657733,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data844_aug1.mat,sit and fall,1,0.31611790229609715,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data845_aug1.mat,sit and fall,1,0.331331633478525,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data846.mat,sit and fall,1,0.45244357322293566,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data846_aug1.mat,sit and fall,1,0.1900985443345033,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data847_aug1.mat,sit and fall,1,0.3682908217870901,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data848_aug1.mat,sit and fall,1,0.38441106413210147,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data854.mat,sit and fall,1,0.46624931489170435,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data854_aug1.mat,sit and fall,1,0.12822629711129377,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data861.mat,sit and fall,1,0.44055898771511653,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data861_aug1.mat,sit and fall,1,0.44055898771511653,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data865.mat,sit and fall,1,0.4432462586960329,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data865_aug1.mat,sit and fall,1,0.4432462586960329,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data867.mat,sit and fall,1,0.285046822279119,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data867_aug1.mat,sit and fall,1,0.285046822279119,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3276.mat,fainting,1,0.0983606349630891,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3276_aug1.mat,fainting,1,0.10608107455255672,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3289.mat,fainting,1,0.5341778969726809,0,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4056_aug1.mat,sitting,0,0.779330237858862,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057.mat,sitting,0,0.6719156653064187,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug1.mat,sitting,0,0.6719156653064187,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug2.mat,sitting,0,0.6719156653064187,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug3.mat,sitting,0,0.6719156653064187,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug4.mat,sitting,0,0.6719156653064187,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug5.mat,sitting,0,0.6719156653064187,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug6.mat,sitting,0,0.6719156653064187,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug8.mat,sitting,0,0.7085813215143073,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4057_aug9.mat,sitting,0,0.7085813215143073,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058.mat,sitting,0,0.8279007968701257,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug1.mat,sitting,0,0.8279007968701257,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug2.mat,sitting,0,0.8392950201794612,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug3.mat,sitting,0,0.9062430778396513,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug4.mat,sitting,0,0.9129955566004092,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug5.mat,sitting,0,0.8385785281500768,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug6.mat,sitting,0,0.9231860877198936,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug7.mat,sitting,0,0.6014075021210538,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug8.mat,sitting,0,0.9157889339899624,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(06) sitting\data4058_aug9.mat,sitting,0,0.9157889339899624,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug1.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug2.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug3.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug4.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug5.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug6.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug7.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug8.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug9.mat,bending,0,0.7093963231153275,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug1.mat,bending,0,0.5467603186850396,1,0
+CWT,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug7.mat,bending,0,0.5410351760978409,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data51.mat,walk and fall,1,0.7543892180948997,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(01) walk and fall\data51_aug1.mat,walk and fall,1,0.7551328298657756,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data841.mat,sit and fall,1,0.4219458953718377,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data841_aug1.mat,sit and fall,1,0.41567768940026895,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data842.mat,sit and fall,1,0.4970100347600747,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data842_aug1.mat,sit and fall,1,0.4970100347600747,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data843.mat,sit and fall,1,0.5663061161648557,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data843_aug1.mat,sit and fall,1,0.6235928892211621,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data865.mat,sit and fall,1,0.6273335581707457,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(02) sit and fall\data865_aug1.mat,sit and fall,1,0.6284398807403205,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1656.mat,stumble,1,0.5495955996328288,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1656_aug1.mat,stumble,1,0.7503909444181397,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(03) stumble\data1657_aug1.mat,stumble,1,0.6910636232528586,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3276.mat,fainting,1,0.605827916095126,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(05) fainting\data3276_aug1.mat,fainting,1,0.7628670956944555,0,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191.mat,bending,0,0.8194601145059082,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug1.mat,bending,0,0.8259084371292877,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug2.mat,bending,0,0.8275951477648124,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug3.mat,bending,0,0.8163679331602284,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug4.mat,bending,0,0.8482564079559636,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug5.mat,bending,0,0.8272946183597727,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug6.mat,bending,0,0.8241454092823487,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug7.mat,bending,0,0.8301723736671196,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug8.mat,bending,0,0.8218344685664625,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4191_aug9.mat,bending,0,0.8202642530779284,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195.mat,bending,0,0.8740903602353642,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug1.mat,bending,0,0.8919528567735487,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug2.mat,bending,0,0.8721682699665024,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug3.mat,bending,0,0.8274327189516715,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug4.mat,bending,0,0.8194501771967174,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug5.mat,bending,0,0.8204218436534374,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug6.mat,bending,0,0.8293945351754435,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug7.mat,bending,0,0.8666308339402088,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug8.mat,bending,0,0.879661848248798,1,0
+Balanced_COMB,C:\Users\nurel\Downloads\ELLYANA FYP\Data Augmented\(07) bending\data4195_aug9.mat,bending,0,0.8453675081517673,1,0
