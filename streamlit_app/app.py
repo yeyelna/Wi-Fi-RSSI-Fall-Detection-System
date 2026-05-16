@@ -1802,4 +1802,4 @@ document.addEventListener("DOMContentLoaded", bootDashboard);
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=1600, scrolling=False)
+components.html(DASHBOARD_HTML, height=2600, scrolling=True)
