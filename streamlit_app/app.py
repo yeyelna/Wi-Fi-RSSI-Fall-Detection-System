@@ -120,25 +120,25 @@ DASHBOARD_HTML = r"""
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        padding: 16px 18px;
-        margin-bottom: 14px;
+        gap: 22px;
+        padding: 26px 28px;
+        margin-bottom: 18px;
     }
 
     .header-title {
         margin: 0;
         color: var(--foreground);
-        font-size: clamp(1.22rem, 1.65vw, 1.55rem);
-        line-height: 1.18;
-        font-weight: var(--font-weight-medium);
-        letter-spacing: -0.02em;
+        font-size: clamp(1.85rem, 3vw, 2.45rem);
+        line-height: 1.08;
+        font-weight: 600;
+        letter-spacing: -0.035em;
     }
 
     .header-subtitle {
-        margin: 7px 0 0;
+        margin: 10px 0 0;
         color: var(--muted-foreground);
-        font-size: 0.82rem;
-        line-height: 1.35;
+        font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+        line-height: 1.45;
         font-weight: 400;
     }
 
@@ -152,8 +152,8 @@ DASHBOARD_HTML = r"""
     }
 
     .status-card {
-        min-height: 32px;
-        padding: 6px 9px;
+        min-height: 38px;
+        padding: 8px 12px;
         border-radius: 0.5rem;
         border: 1px solid var(--border);
         display: inline-flex;
@@ -165,8 +165,8 @@ DASHBOARD_HTML = r"""
     }
 
     .status-icon {
-        width: 15px;
-        height: 15px;
+        width: 17px;
+        height: 17px;
         border-radius: 999px;
         display: inline-grid;
         place-items: center;
@@ -178,7 +178,7 @@ DASHBOARD_HTML = r"""
 
     .status-value {
         color: inherit;
-        font-size: 0.72rem;
+        font-size: 0.78rem;
         line-height: 1;
         font-weight: 500;
         letter-spacing: -0.01em;
@@ -836,6 +836,14 @@ DASHBOARD_HTML = r"""
         .dashboard { padding: 10px; }
 
         .header-card, .panel, .history-card { padding: 14px; }
+
+        .header-title {
+            font-size: clamp(1.55rem, 7vw, 2rem);
+        }
+
+        .header-subtitle {
+            font-size: 0.92rem;
+        }
 
         .status-grid {
             display: grid;
