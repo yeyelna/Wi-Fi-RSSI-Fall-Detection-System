@@ -270,7 +270,7 @@ DASHBOARD_HTML = r"""
         font-weight: 400;
     }
 
-    input[type="text"] {
+    input[type="text"], input[type="search"], select {
         width: 100%;
         border: 1px solid #d8dee8;
         border-radius: 0.5rem;
@@ -282,7 +282,7 @@ DASHBOARD_HTML = r"""
         outline: none;
     }
 
-    input[type="text"]:focus {
+    input[type="text"]:focus, input[type="search"]:focus, select:focus {
         border-color: #93c5fd;
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
     }
@@ -398,6 +398,30 @@ DASHBOARD_HTML = r"""
         font-size: 0.72rem;
         font-weight: 400;
         word-break: break-word;
+    }
+
+    .file-meta-box {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        background: #f8fbff;
+        color: #52637a;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+    .file-meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 2px 0;
+    }
+
+    .file-meta-row span:last-child {
+        text-align: right;
+        color: var(--foreground);
+        font-weight: 500;
     }
 
     .signal-card, .result-card {
@@ -962,20 +986,33 @@ DASHBOARD_HTML = r"""
             <article class="card panel input-panel" id="inputPanel">
                 <h2 class="section-title">Input Panel</h2>
 
-                <label for="filenameInput">Enter Filename</label>
-                <input id="filenameInput" type="text" value="data31.mat" placeholder="data31.mat" />
-                <button id="classifyBtn" class="button button-primary" onclick="classifyByFilename()">Classify by Filename</button>
+                <label for="fileSearch">Search Prepared Dataset</label>
+                <input id="fileSearch" type="search" placeholder="Search filename, event, or label..." oninput="renderAvailableFileOptions()" />
+
+                <label for="fileSelect" style="margin-top:10px;">Select Prepared File</label>
+                <select id="fileSelect" onchange="handlePreparedFileChange()">
+                    <option value="">Loading prepared files...</option>
+                </select>
+
+                <div id="selectedFileMeta" class="file-meta-box">
+                    Prepared file metadata will appear here.
+                </div>
+
+                <button id="classifyBtn" class="button button-primary" onclick="classifySelectedFile()">Classify Selected File</button>
                 <div id="filenameMessage"></div>
 
                 <div class="divider"></div>
 
-                <label for="fileUpload">Upload .mat File</label>
+                <label for="fileUpload">Optional .mat Upload / Test</label>
+                <div class="helper-text" style="margin-bottom:8px;">
+                    Fast feature-bank lookup only: uploaded .mat files must already exist in MTFF_384.csv.
+                </div>
                 <div class="upload-box">
                     <input id="fileUpload" type="file" accept=".mat" onchange="handleFileSelect()" />
                     <div>
                         <div class="upload-icon"></div>
                         <div class="upload-main">Click to browse</div>
-                        <div class="upload-sub">Accepted: .mat</div>
+                        <div class="upload-sub">Accepted: .mat from prepared dataset</div>
                     </div>
                 </div>
                 <div id="selectedFileName" class="helper-text">No file selected</div>
@@ -1113,6 +1150,8 @@ const API_BASE_URL = "https://wi-fi-rssi-fall-detection-system.onrender.com";
 let state = {
     modelInfo: null,
     history: [],
+    availableFiles: [],
+    selectedPreparedFile: null,
     currentResult: null,
     currentFile: null,
     selectedFile: null,
@@ -1122,6 +1161,114 @@ let state = {
 
 function friendlyErrorMessage() {
     return "File not supported for fast classification. Please choose a test file from the prepared dataset.";
+}
+
+function getFileBaseName(value) {
+    return String(value || "").split(/[\\/]/).pop();
+}
+
+function getPreparedFileName(item) {
+    return item?.file_name || item?.filename || item?.File || "";
+}
+
+function getPreparedFileLabel(item) {
+    const name = item?.display_name || getFileBaseName(getPreparedFileName(item));
+    const event = item?.event || item?.actual_event || "unknown event";
+    const label = Number(item?.label ?? item?.actual_label);
+    const labelText = label === 1 ? "Fall" : (label === 0 ? "Non-Fall" : "Unknown");
+    const typeText = item?.is_original ? "Original" : (item?.is_aug ? "Augmented" : "Prepared");
+    return `${name} | ${event} | ${labelText} | ${typeText}`;
+}
+
+async function loadAvailableFiles() {
+    const select = document.getElementById("fileSelect");
+    try {
+        const data = await safeFetch(`${API_BASE_URL}/available-files`);
+        const files = Array.isArray(data) ? data : data.items || data.files || data.available_files || [];
+        state.availableFiles = Array.isArray(files) ? files : [];
+        renderAvailableFileOptions();
+        setMessage("filenameMessage", state.availableFiles.length ? "" : "No prepared files found from backend.", "error");
+    } catch {
+        state.availableFiles = [];
+        if (select) select.innerHTML = `<option value="">Unable to load prepared files</option>`;
+        setMessage("filenameMessage", "Unable to load prepared dataset list. Please check API_BASE_URL or backend /available-files.", "error");
+    }
+}
+
+function renderAvailableFileOptions() {
+    const select = document.getElementById("fileSelect");
+    const search = document.getElementById("fileSearch");
+    if (!select) return;
+
+    const query = (search?.value || "").toLowerCase().trim();
+    const filtered = state.availableFiles
+        .map((item, originalIndex) => ({ item, originalIndex }))
+        .filter(({ item }) => {
+            if (!query) return true;
+            const text = [
+                getPreparedFileName(item),
+                item?.display_name,
+                item?.base_group,
+                item?.event,
+                item?.label,
+                item?.is_original ? "original" : "",
+                item?.is_aug ? "augmented" : ""
+            ].join(" ").toLowerCase();
+            return text.includes(query);
+        })
+        .slice(0, 250);
+
+    if (!state.availableFiles.length) {
+        select.innerHTML = `<option value="">No prepared files available</option>`;
+        updateSelectedFileMeta(null);
+        return;
+    }
+
+    if (!filtered.length) {
+        select.innerHTML = `<option value="">No matching prepared file</option>`;
+        updateSelectedFileMeta(null);
+        return;
+    }
+
+    select.innerHTML = filtered.map(({ item, originalIndex }, idx) => {
+        const selected = state.selectedPreparedFile === item || (!state.selectedPreparedFile && idx === 0);
+        return `<option value="${originalIndex}" ${selected ? "selected" : ""}>${escapeHtml(getPreparedFileLabel(item))}</option>`;
+    }).join("");
+
+    if (!state.selectedPreparedFile) {
+        state.selectedPreparedFile = filtered[0].item;
+    }
+    handlePreparedFileChange();
+}
+
+function handlePreparedFileChange() {
+    const select = document.getElementById("fileSelect");
+    const index = Number(select?.value);
+    state.selectedPreparedFile = Number.isInteger(index) ? state.availableFiles[index] : null;
+    updateSelectedFileMeta(state.selectedPreparedFile);
+    setMessage("filenameMessage", "");
+}
+
+function updateSelectedFileMeta(item) {
+    const box = document.getElementById("selectedFileMeta");
+    if (!box) return;
+
+    if (!item) {
+        box.innerHTML = "Please select a prepared file from the backend feature bank.";
+        return;
+    }
+
+    const label = Number(item.label ?? item.actual_label);
+    const labelText = label === 1 ? "Fall" : (label === 0 ? "Non-Fall" : "Unknown");
+    const typeText = item.is_original ? "Original" : (item.is_aug ? "Augmented" : "Prepared");
+
+    box.innerHTML = `
+        <div class="file-meta-row"><span>Filename</span><span>${escapeHtml(item.display_name || getFileBaseName(getPreparedFileName(item)))}</span></div>
+        <div class="file-meta-row"><span>Base group</span><span>${escapeHtml(item.base_group || "—")}</span></div>
+        <div class="file-meta-row"><span>Actual event</span><span>${escapeHtml(item.event || "—")}</span></div>
+        <div class="file-meta-row"><span>Actual label</span><span>${escapeHtml(labelText)}</span></div>
+        <div class="file-meta-row"><span>Data type</span><span>${escapeHtml(typeText)}</span></div>
+    `;
 }
 
 function setMessage(targetId, message, type = "info") {
@@ -1655,17 +1802,19 @@ function renderHistory() {
     }).join("");
 }
 
-async function classifyByFilename() {
-    const filename = document.getElementById("filenameInput").value.trim();
+async function classifySelectedFile() {
+    const selected = state.selectedPreparedFile;
+    const filename = getPreparedFileName(selected);
     setMessage("filenameMessage", "");
 
-    if (!filename) {
+    if (!selected || !filename) {
         clearClassification(null);
-        setMessage("filenameMessage", "Please enter a .mat filename.", "error");
+        setMessage("filenameMessage", "Please select a prepared file from the dropdown.", "error");
         return;
     }
 
-    clearClassification(filename);
+    const displayName = selected.display_name || getFileBaseName(filename);
+    clearClassification(displayName);
     setLoading("classifyBtn", true, "Classifying...");
 
     try {
@@ -1678,7 +1827,7 @@ async function classifyByFilename() {
         const result = extractPredictionData(data);
         if (!result) throw new Error("Unsupported");
 
-        state.currentFile = filename;
+        state.currentFile = displayName;
         state.currentResult = result;
         renderResult();
 
@@ -1687,13 +1836,18 @@ async function classifyByFilename() {
 
         await loadHistory();
     } catch {
-        clearClassification(filename);
+        clearClassification(displayName);
         renderChart(null);
         setMessage("filenameMessage", friendlyErrorMessage(), "error");
     } finally {
         setLoading("classifyBtn", false);
     }
 }
+
+async function classifyByFilename() {
+    return classifySelectedFile();
+}
+
 
 function handleFileSelect() {
     const input = document.getElementById("fileUpload");
@@ -1801,7 +1955,7 @@ async function clearAllHistory() {
 async function bootDashboard() {
     renderResult();
     renderChart(null);
-    await Promise.all([loadHealth(), loadModelInfo(), loadHistory()]);
+    await Promise.all([loadHealth(), loadModelInfo(), loadAvailableFiles(), loadHistory()]);
 }
 
 document.addEventListener("DOMContentLoaded", bootDashboard);

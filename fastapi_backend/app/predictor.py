@@ -21,6 +21,16 @@ TIMESTAMP_TIMEZONE = "Asia/Kuala_Lumpur"
 TIMESTAMP_OFFSET = "+08:00"
 USER_FRIENDLY_NOT_FOUND = "File not supported for fast classification. Please choose a test file from the prepared dataset."
 
+def _normalize_lookup_text(value) -> str:
+    """Normalize Windows/Linux paths for reliable lookup on Render/Linux."""
+    return str(value).strip().replace("\\", "/").lower()
+
+
+def _basename_any_path(value) -> str:
+    """Return filename even when the stored path uses Windows backslashes."""
+    return Path(str(value).strip().replace("\\", "/")).name
+
+
 MTFF_BLOCKS = {
     "FFT": np.arange(0, 128),
     "STFT": np.arange(128, 256),
@@ -170,8 +180,10 @@ class MTFFPredictor:
             self.model_info = {}
 
         self.feature_bank = pd.read_csv(data_path)
-        self.feature_bank["File_lookup_full"] = self.feature_bank["File"].astype(str).str.lower()
-        self.feature_bank["File_lookup_name"] = self.feature_bank["File"].astype(str).apply(lambda x: Path(x).name.lower())
+        self.feature_bank["File_lookup_full"] = self.feature_bank["File"].astype(str).apply(_normalize_lookup_text)
+        self.feature_bank["File_lookup_name"] = self.feature_bank["File"].astype(str).apply(
+            lambda x: _basename_any_path(x).lower()
+        )
 
         available_path = DATA_DIR / "available_files.json"
         if available_path.exists():
@@ -179,6 +191,12 @@ class MTFFPredictor:
                 self.available_files = json.load(f)
         else:
             self.available_files = [{"file_name": str(x)} for x in self.feature_bank["File"].astype(str).tolist()]
+
+        # Add display fields for dashboard dropdowns without changing the original file_name.
+        for item in self.available_files:
+            raw_name = item.get("file_name") or item.get("filename") or ""
+            item["display_name"] = _basename_any_path(raw_name)
+            item["lookup_name"] = item["display_name"].lower()
 
     @property
     def model_loaded(self) -> bool:
@@ -215,10 +233,11 @@ class MTFFPredictor:
         }
 
     def _find_feature_row(self, filename: str) -> pd.Series:
-        lookup = Path(str(filename)).name.lower()
+        lookup_name = _basename_any_path(filename).lower()
+        lookup_full = _normalize_lookup_text(filename)
         matches = self.feature_bank[
-            (self.feature_bank["File_lookup_name"] == lookup)
-            | (self.feature_bank["File_lookup_full"] == str(filename).lower())
+            (self.feature_bank["File_lookup_name"] == lookup_name)
+            | (self.feature_bank["File_lookup_full"] == lookup_full)
         ].copy()
         if matches.empty:
             raise FileNotFoundError(USER_FRIENDLY_NOT_FOUND)
