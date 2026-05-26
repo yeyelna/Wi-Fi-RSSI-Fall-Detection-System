@@ -1,0 +1,13 @@
+{
+  "backend_folder": "C:\\Users\\nurel\\Downloads\\ELLYANA FYP\\Coding\\LGBM_NestedCV_Finalize\\dashboard_artifacts\\fastapi_backend",
+  "app_files": [
+    "app/__init__.py",
+    "app/database.py",
+    "app/predictor.py",
+    "app/main.py"
+  ],
+  "model_artifacts_folder": "model_artifacts",
+  "data_folder": "data",
+  "requirements": "requirements.txt",
+  "created_at_malaysia_time": "2026-05-26T15:52:45+08:00"
+}

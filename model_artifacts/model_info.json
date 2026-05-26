@@ -1,0 +1,20 @@
+{
+  "display_model_name": "MTFF Event-Aware Veto",
+  "internal_model_name": "MTFF_PLUS_EVENT_AWARE_VETO",
+  "classifier": "LightGBM",
+  "feature_method": "MTFF + derived block statistics + auxiliary event model",
+  "feature_order_display": "FFT + STFT + CWT",
+  "input_feature_count_before_derivation": 384,
+  "feature_count_after_derivation": 504,
+  "selected_feature_count": 300,
+  "classification_type": "Binary Classification",
+  "classes": [
+    "Non-Fall",
+    "Fall"
+  ],
+  "alpha_gate": 0.35,
+  "beta_event": 0.6,
+  "threshold": 0.735,
+  "threshold_source": "inner OOF only",
+  "created_at_malaysia_time": "2026-05-26T15:52:44+08:00"
+}
