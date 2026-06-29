@@ -1,0 +1,6 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+fastapi_backend/history.db
