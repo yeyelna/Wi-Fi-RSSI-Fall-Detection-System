@@ -400,13 +400,16 @@ DASHBOARD_HTML = r"""
         word-break: break-word;
     }
 
-    .input-panel, .signal-card, .result-card {
+    .input-panel, .signal-card {
         height: 430px;
         min-height: 430px;
     }
 
     .result-card {
-        overflow: hidden;
+        height: auto;
+        min-height: 430px;
+        overflow: visible;
+        padding-bottom: 20px;
     }
 
     .signal-card {
@@ -568,8 +571,8 @@ DASHBOARD_HTML = r"""
     }
 
     .alert-note {
-        margin-top: 10px;
-        padding: 12px 13px;
+        margin-top: 8px;
+        padding: 10px 13px;
         border: 1px solid;
         border-radius: 0.6rem;
         font-size: 0.84rem;
