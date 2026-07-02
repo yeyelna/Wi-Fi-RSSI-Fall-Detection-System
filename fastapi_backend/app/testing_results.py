@@ -218,11 +218,30 @@ class OfficialTestingStore:
         threshold = row.get("Threshold_FromInnerOOF", row.get("Threshold", row.get("threshold", None)))
         correct = _as_bool(row.get("Correct", None))
         risk = "HIGH" if prediction_text == "Fall" else "LOW"
-        if probability is not None and threshold not in [None, "", np.nan]:
+        threshold_float = None
+        if threshold not in [None, ""] and pd.notna(threshold):
             try:
-                risk = "HIGH" if probability >= float(threshold) else "LOW"
+                threshold_float = float(threshold)
+            except Exception:
+                threshold_float = None
+
+        if probability is not None and threshold_float is not None:
+            try:
+                risk = "HIGH" if probability >= threshold_float else "LOW"
             except Exception:
                 pass
+
+        # Dashboard confidence display must always be one binary complement pair.
+        # The official FinalProb is preserved, while display_fall_probability is
+        # used only for the two confidence bars shown in the dashboard.
+        display_fall_probability = probability
+        if probability is not None and threshold_float is not None:
+            if prediction_text == "Non-Fall" and probability >= threshold_float:
+                display_fall_probability = 1.0 - probability
+            elif prediction_text == "Fall" and probability < threshold_float:
+                display_fall_probability = 1.0 - probability
+        if display_fall_probability is not None:
+            display_fall_probability = float(max(0.0, min(1.0, display_fall_probability)))
 
         all_methods = []
         for _, mrow in matches.iterrows():

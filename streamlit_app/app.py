@@ -32,7 +32,42 @@ st.markdown(
             background: #ffffff !important;
             border: 0 !important;
         }
-    </style>
+    
+
+    /* Final compact dashboard height and fixed Recent Official Test Checks card */
+    .history-card {
+        height: 300px !important;
+        min-height: 300px !important;
+        max-height: 300px !important;
+        overflow: hidden !important;
+        padding: 14px 16px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .history-header {
+        margin-bottom: 8px !important;
+    }
+
+    .table-wrap {
+        width: 100%;
+        max-height: 205px !important;
+        overflow-y: auto !important;
+        overflow-x: auto !important;
+        border: 1px solid #eef2f7;
+        border-radius: 0.5rem;
+    }
+
+    .table-wrap thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    th, td {
+        padding: 8px 10px !important;
+        line-height: 1.2 !important;
+    }
+\n</style>
     """,
     unsafe_allow_html=True,
 )
@@ -1916,7 +1951,7 @@ async function loadModelInfo() {
 
 async function loadHistory() {
     try {
-        const response = await fetch(`${API_BASE_URL}/history?limit=10`);
+        const response = await fetch(`${API_BASE_URL}/history?limit=50`);
         if (!response.ok) throw new Error("History failed");
         const data = await response.json();
         const records = Array.isArray(data) ? data : data.items || data.records || data.history || [];
@@ -2128,4 +2163,4 @@ document.addEventListener("DOMContentLoaded", bootDashboard);
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=1520, scrolling=False)
+components.html(DASHBOARD_HTML, height=1160, scrolling=False)
