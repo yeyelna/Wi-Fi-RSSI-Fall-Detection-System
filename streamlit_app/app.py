@@ -105,7 +105,7 @@ DASHBOARD_HTML = r"""
         width: 100%;
         max-width: 1500px;
         margin: 0 auto;
-        padding: 12px 12px 6px;
+        padding: 12px 12px 56px;
         background: var(--background);
     }
 
@@ -573,7 +573,7 @@ DASHBOARD_HTML = r"""
         background: #f8fafc;
         border-radius: 0.54rem;
         padding: 5px 10px;
-        margin-bottom: 4px;
+        margin-bottom: 42px;
         border: 1px solid #eef2f7;
     }
 
@@ -1076,7 +1076,7 @@ DASHBOARD_HTML = r"""
         max-height: 300px;
         overflow: hidden;
         padding: 14px 16px;
-        margin-bottom: 4px;
+        margin-bottom: 42px;
     }
 
     .history-header {
@@ -2146,7 +2146,7 @@ function resizeStreamlitFrameToDashboard() {
     const dashboard = document.querySelector(".dashboard");
     if (!dashboard) return;
     const rect = dashboard.getBoundingClientRect();
-    const height = Math.ceil(rect.height + 10);
+    const height = Math.ceil(rect.height + 48);
     window.parent.postMessage({
         isStreamlitMessage: true,
         type: "streamlit:setFrameHeight",
@@ -2170,4 +2170,4 @@ try {
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=1090, scrolling=False)
+components.html(DASHBOARD_HTML, height=1140, scrolling=False)
