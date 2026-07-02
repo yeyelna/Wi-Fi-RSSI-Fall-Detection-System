@@ -105,7 +105,7 @@ DASHBOARD_HTML = r"""
         width: 100%;
         max-width: 1500px;
         margin: 0 auto;
-        padding: 12px;
+        padding: 12px 12px 6px;
         background: var(--background);
     }
 
@@ -1076,7 +1076,7 @@ DASHBOARD_HTML = r"""
         max-height: 300px;
         overflow: hidden;
         padding: 14px 16px;
-        margin-bottom: 10px;
+        margin-bottom: 4px;
     }
 
     .history-header {
@@ -2141,9 +2141,33 @@ async function bootDashboard() {
 }
 
 document.addEventListener("DOMContentLoaded", bootDashboard);
+
+function resizeStreamlitFrameToDashboard() {
+    const dashboard = document.querySelector(".dashboard");
+    if (!dashboard) return;
+    const rect = dashboard.getBoundingClientRect();
+    const height = Math.ceil(rect.height + 10);
+    window.parent.postMessage({
+        isStreamlitMessage: true,
+        type: "streamlit:setFrameHeight",
+        height: height
+    }, "*");
+}
+
+window.addEventListener("load", resizeStreamlitFrameToDashboard);
+window.addEventListener("resize", resizeStreamlitFrameToDashboard);
+setTimeout(resizeStreamlitFrameToDashboard, 150);
+setTimeout(resizeStreamlitFrameToDashboard, 700);
+try {
+    const dashboardObserver = new ResizeObserver(resizeStreamlitFrameToDashboard);
+    dashboardObserver.observe(document.querySelector(".dashboard"));
+} catch (error) {
+    // ResizeObserver is optional; fixed height still works if unavailable.
+}
+
 </script>
 </body>
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=1120, scrolling=False)
+components.html(DASHBOARD_HTML, height=1090, scrolling=False)
