@@ -32,41 +32,6 @@ st.markdown(
             background: #ffffff !important;
             border: 0 !important;
         }
-    
-
-    /* Final compact dashboard height and fixed Recent Official Test Checks card */
-    .history-card {
-        height: 300px !important;
-        min-height: 300px !important;
-        max-height: 300px !important;
-        overflow: hidden !important;
-        padding: 14px 16px !important;
-        margin-bottom: 10px !important;
-    }
-
-    .history-header {
-        margin-bottom: 8px !important;
-    }
-
-    .table-wrap {
-        width: 100%;
-        max-height: 205px !important;
-        overflow-y: auto !important;
-        overflow-x: auto !important;
-        border: 1px solid #eef2f7;
-        border-radius: 0.5rem;
-    }
-
-    .table-wrap thead th {
-        position: sticky;
-        top: 0;
-        z-index: 2;
-    }
-
-    th, td {
-        padding: 8px 10px !important;
-        line-height: 1.2 !important;
-    }
 \n</style>
     """,
     unsafe_allow_html=True,
@@ -1102,6 +1067,43 @@ DASHBOARD_HTML = r"""
         table { min-width: 880px; }
         th, td { padding: 9px 10px; }
     }
+
+
+    /* Fixed Recent Official Test Checks card: 5 visible logs, scroll after that */
+    .history-card {
+        height: 300px;
+        min-height: 300px;
+        max-height: 300px;
+        overflow: hidden;
+        padding: 14px 16px;
+        margin-bottom: 10px;
+    }
+
+    .history-header {
+        margin-bottom: 8px;
+    }
+
+    #historyContainer.table-wrap {
+        width: 100%;
+        max-height: 212px;
+        overflow-y: auto;
+        overflow-x: auto;
+        border: 1px solid #eef2f7;
+        border-radius: 0.5rem;
+    }
+
+    #historyContainer thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: #fbfdff;
+    }
+
+    #historyContainer th,
+    #historyContainer td {
+        padding: 8px 10px;
+        line-height: 1.18;
+    }
 </style>
 </head>
 <body>
@@ -1347,11 +1349,11 @@ function formatPercent(value) {
     if (typeof value === "string" && value.includes("%")) return value.trim();
     const numeric = Number(value);
     if (Number.isNaN(numeric)) return String(value);
-    const percent = numeric <= 1 ? numeric * 100 : numeric;
+    const percent = Math.max(0, Math.min(100, numeric));
     return `${percent.toFixed(1)}%`;
 }
 
-function _toPercentNumber(value) {
+function _toPercentFromProbability(value) {
     if (value === undefined || value === null || value === "") return null;
     if (typeof value === "string") value = value.replace("%", "").trim();
     const numeric = Number(value);
@@ -1359,69 +1361,51 @@ function _toPercentNumber(value) {
     return Math.max(0, Math.min(100, numeric <= 1 ? numeric * 100 : numeric));
 }
 
-function getRawFallConfidencePercent(data) {
-    if (!data) return null;
-    return _toPercentNumber(
-        data.fall_probability ??
-        data.final_probability ??
-        data.FinalProb ??
-        data.final_prob ??
-        data.probability ??
-        data.fall_confidence_percent ??
-        data.fall_confidence ??
-        data.score ??
-        data.confidence ??
-        null
-    );
+function _toPercentLiteral(value) {
+    if (value === undefined || value === null || value === "") return null;
+    if (typeof value === "string") value = value.replace("%", "").trim();
+    const numeric = Number(value);
+    if (Number.isNaN(numeric)) return null;
+    return Math.max(0, Math.min(100, numeric));
+}
+
+function _clampPercent(value) {
+    return Math.max(0, Math.min(100, Number(value)));
 }
 
 function getConfidencePair(data, activity = null) {
-    let fallPercent = getRawFallConfidencePercent(data);
-    if (fallPercent === null) {
-        return { fallConfidence: null, nonFallConfidence: null };
-    }
+    if (!data) return { fallConfidence: null, nonFallConfidence: null };
 
-    let nonFallPercent = Math.max(0, Math.min(100, 100 - fallPercent));
-    const predictedActivity = normalizeActivity(
-        activity ??
-        data?.prediction_text ??
-        data?.classified_activity ??
-        data?.activity ??
-        data?.classification ??
-        data?.prediction ??
-        data?.result
-    );
-
-    const thresholdPercent = _toPercentNumber(
-        data?.decision_threshold ??
-        data?.threshold ??
-        data?.Threshold_FromInnerOOF ??
+    // FinalProb/probability/fall_probability is Fall probability.
+    // Non-Fall confidence is always 100 - Fall confidence.
+    // No label-based flipping is used.
+    let fallPercent = _toPercentFromProbability(
+        data?.official_final_probability ??
+        data?.final_probability ??
+        data?.fall_probability ??
+        data?.FinalProb ??
+        data?.final_prob ??
+        data?.probability ??
+        data?.display_fall_probability ??
+        data?.display_fall_prob ??
         null
     );
 
-    // Safety guard for old/cached API records:
-    // Some records stored the predicted-class confidence under fall_confidence_percent.
-    // If the prediction says Non-Fall but the displayed Fall score is above the
-    // decision threshold, the value is inconsistent with a true fall probability.
-    // In that case, treat the incoming value as predicted-class confidence and flip it.
-    const inconsistentNonFall = predictedActivity === "Non-Fall" && thresholdPercent !== null && fallPercent >= thresholdPercent;
-    const inconsistentFall = predictedActivity === "Fall" && thresholdPercent !== null && fallPercent < thresholdPercent;
-
-    if (inconsistentNonFall || inconsistentFall) {
-        const predictedConfidence = fallPercent;
-        if (predictedActivity === "Non-Fall") {
-            nonFallPercent = predictedConfidence;
-            fallPercent = 100 - predictedConfidence;
-        } else if (predictedActivity === "Fall") {
-            fallPercent = predictedConfidence;
-            nonFallPercent = 100 - predictedConfidence;
-        }
+    // Percent fields are already percentages, so 0.96 means 0.96%, not 96%.
+    if (fallPercent === null) {
+        fallPercent = _toPercentLiteral(data?.fall_confidence_percent ?? data?.fall_confidence ?? null);
     }
 
-    return {
-        fallConfidence: Math.max(0, Math.min(100, fallPercent)),
-        nonFallConfidence: Math.max(0, Math.min(100, nonFallPercent))
-    };
+    if (fallPercent === null) {
+        const nonFallPercent = _toPercentLiteral(data?.non_fall_confidence_percent ?? data?.non_fall_confidence ?? null);
+        if (nonFallPercent !== null) fallPercent = 100 - nonFallPercent;
+    }
+
+    if (fallPercent === null) return { fallConfidence: null, nonFallConfidence: null };
+
+    fallPercent = _clampPercent(fallPercent);
+    const nonFallPercent = _clampPercent(100 - fallPercent);
+    return { fallConfidence: fallPercent, nonFallConfidence: nonFallPercent };
 }
 
 function getFallConfidence(data) {
@@ -1437,7 +1421,7 @@ function percentNumber(value) {
     if (typeof value === "string" && value.includes("%")) value = value.replace("%", "");
     const numeric = Number(value);
     if (Number.isNaN(numeric)) return 0;
-    return Math.max(0, Math.min(100, numeric <= 1 ? numeric * 100 : numeric));
+    return Math.max(0, Math.min(100, numeric));
 }
 
 function formatSeconds(value) {
@@ -1990,10 +1974,9 @@ function getRecordFileName(record) {
 }
 
 function getRecordConfidence(record) {
-    if (record.fall_confidence_percent !== undefined && record.fall_confidence_percent !== null) {
-        return formatPercent(record.fall_confidence_percent);
-    }
-    return formatPercent(record.probability ?? record.fall_probability ?? record.confidence);
+    const activity = getRecordActivity(record);
+    const pair = getConfidencePair(record, activity);
+    return formatPercent(pair.fallConfidence);
 }
 
 function getInputMode(record) {
@@ -2163,4 +2146,4 @@ document.addEventListener("DOMContentLoaded", bootDashboard);
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=1160, scrolling=False)
+components.html(DASHBOARD_HTML, height=1120, scrolling=False)

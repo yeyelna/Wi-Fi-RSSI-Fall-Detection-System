@@ -230,16 +230,9 @@ class OfficialTestingStore:
                 risk = "HIGH" if probability >= threshold_float else "LOW"
             except Exception:
                 pass
-
-        # Dashboard confidence display must always be one binary complement pair.
-        # The official FinalProb is preserved, while display_fall_probability is
-        # used only for the two confidence bars shown in the dashboard.
+        # Confidence display follows the binary rule: FinalProb is Fall probability.
+        # Non-Fall confidence is always 1 - FinalProb. No label-based flipping is used.
         display_fall_probability = probability
-        if probability is not None and threshold_float is not None:
-            if prediction_text == "Non-Fall" and probability >= threshold_float:
-                display_fall_probability = 1.0 - probability
-            elif prediction_text == "Fall" and probability < threshold_float:
-                display_fall_probability = 1.0 - probability
         if display_fall_probability is not None:
             display_fall_probability = float(max(0.0, min(1.0, display_fall_probability)))
 
