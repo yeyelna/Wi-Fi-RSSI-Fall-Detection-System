@@ -1316,35 +1316,85 @@ function formatPercent(value) {
     return `${percent.toFixed(1)}%`;
 }
 
-function getFallConfidence(data) {
+function _toPercentNumber(value) {
+    if (value === undefined || value === null || value === "") return null;
+    if (typeof value === "string") value = value.replace("%", "").trim();
+    const numeric = Number(value);
+    if (Number.isNaN(numeric)) return null;
+    return Math.max(0, Math.min(100, numeric <= 1 ? numeric * 100 : numeric));
+}
+
+function getRawFallConfidencePercent(data) {
     if (!data) return null;
-    return (
+    return _toPercentNumber(
+        data.fall_probability ??
+        data.final_probability ??
+        data.FinalProb ??
+        data.final_prob ??
+        data.probability ??
         data.fall_confidence_percent ??
         data.fall_confidence ??
-        data.fall_probability ??
-        data.probability ??
-        data.confidence ??
         data.score ??
+        data.confidence ??
         null
     );
 }
 
-function getNonFallConfidence(data) {
-    if (!data) return null;
-
-    const fallValue = getFallConfidence(data);
-    if (fallValue === null || fallValue === undefined || fallValue === "") return null;
-
-    let numeric = fallValue;
-    if (typeof numeric === "string") {
-        numeric = numeric.replace("%", "").trim();
+function getConfidencePair(data, activity = null) {
+    let fallPercent = getRawFallConfidencePercent(data);
+    if (fallPercent === null) {
+        return { fallConfidence: null, nonFallConfidence: null };
     }
 
-    numeric = Number(numeric);
-    if (Number.isNaN(numeric)) return null;
+    let nonFallPercent = Math.max(0, Math.min(100, 100 - fallPercent));
+    const predictedActivity = normalizeActivity(
+        activity ??
+        data?.prediction_text ??
+        data?.classified_activity ??
+        data?.activity ??
+        data?.classification ??
+        data?.prediction ??
+        data?.result
+    );
 
-    const fallPercent = numeric <= 1 ? numeric * 100 : numeric;
-    return Math.max(0, Math.min(100, 100 - fallPercent));
+    const thresholdPercent = _toPercentNumber(
+        data?.decision_threshold ??
+        data?.threshold ??
+        data?.Threshold_FromInnerOOF ??
+        null
+    );
+
+    // Safety guard for old/cached API records:
+    // Some records stored the predicted-class confidence under fall_confidence_percent.
+    // If the prediction says Non-Fall but the displayed Fall score is above the
+    // decision threshold, the value is inconsistent with a true fall probability.
+    // In that case, treat the incoming value as predicted-class confidence and flip it.
+    const inconsistentNonFall = predictedActivity === "Non-Fall" && thresholdPercent !== null && fallPercent >= thresholdPercent;
+    const inconsistentFall = predictedActivity === "Fall" && thresholdPercent !== null && fallPercent < thresholdPercent;
+
+    if (inconsistentNonFall || inconsistentFall) {
+        const predictedConfidence = fallPercent;
+        if (predictedActivity === "Non-Fall") {
+            nonFallPercent = predictedConfidence;
+            fallPercent = 100 - predictedConfidence;
+        } else if (predictedActivity === "Fall") {
+            fallPercent = predictedConfidence;
+            nonFallPercent = 100 - predictedConfidence;
+        }
+    }
+
+    return {
+        fallConfidence: Math.max(0, Math.min(100, fallPercent)),
+        nonFallConfidence: Math.max(0, Math.min(100, nonFallPercent))
+    };
+}
+
+function getFallConfidence(data) {
+    return getConfidencePair(data, null).fallConfidence;
+}
+
+function getNonFallConfidence(data) {
+    return getConfidencePair(data, null).nonFallConfidence;
 }
 
 function percentNumber(value) {
@@ -1472,8 +1522,9 @@ function extractPredictionData(data) {
         return null;
     }
 
-    const confidence = getFallConfidence(payload);
-    const nonFallConfidence = getNonFallConfidence(payload);
+    const confidencePair = getConfidencePair(payload, activity);
+    const confidence = confidencePair.fallConfidence;
+    const nonFallConfidence = confidencePair.nonFallConfidence;
     const risk = payload.risk_level || (activity === "Fall" ? "High" : "Low");
     const processingTime = (
         payload.processing_time_sec ??
