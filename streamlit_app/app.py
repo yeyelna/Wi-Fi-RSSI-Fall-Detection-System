@@ -1106,7 +1106,7 @@ DASHBOARD_HTML = r"""
     }
 
 
-    /* FINAL RESULT CARD FIT FIX: keep all result content inside the fixed 430px card */
+    /* FINAL OFFICIAL RESULT CARD POLISH: bigger animated top alert, fixed inside 430px card */
     .first-row {
         grid-auto-rows: 430px !important;
         align-items: stretch !important;
@@ -1126,7 +1126,7 @@ DASHBOARD_HTML = r"""
     }
 
     .result-card .section-title {
-        margin-bottom: 9px !important;
+        margin-bottom: 8px !important;
         flex: 0 0 auto !important;
     }
 
@@ -1141,47 +1141,78 @@ DASHBOARD_HTML = r"""
         min-height: 0 !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 0 !important;
         overflow: hidden !important;
     }
 
     .result-box {
+        min-height: 112px !important;
         margin: 0 0 6px !important;
-        padding: 18px 20px !important;
-        min-height: 82px !important;
-        border-radius: 0.80rem !important;
-        gap: 13px !important;
-        font-size: 1.22rem !important;
+        padding: 24px 24px !important;
+        border-width: 2px !important;
+        border-radius: 0.9rem !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 16px !important;
+        font-size: 1.42rem !important;
         line-height: 1.08 !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.006em !important;
         flex: 0 0 auto !important;
+        transform-origin: center !important;
+        animation: breatheResult 1.85s ease-in-out infinite !important;
+        will-change: transform, box-shadow !important;
     }
 
     .result-box span:first-child {
-        font-size: 1.18rem !important;
+        font-size: 1.36rem !important;
+        line-height: 1 !important;
+    }
+
+    .result-box span:last-child {
+        line-height: 1.08 !important;
+    }
+
+    .fall-box {
+        --breathe-shadow: rgba(212, 24, 61, 0.18) !important;
+    }
+
+    .normal-box {
+        --breathe-shadow: rgba(22, 163, 74, 0.16) !important;
+    }
+
+    @keyframes breatheResult {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+        50% {
+            transform: scale(1.012);
+            box-shadow: 0 0 0 6px var(--breathe-shadow);
+        }
     }
 
     .result-context {
-        margin: 0 0 6px !important;
-        font-size: 0.62rem !important;
-        line-height: 1.15 !important;
+        margin: 0 0 5px !important;
+        font-size: 0.60rem !important;
+        line-height: 1.12 !important;
         flex: 0 0 auto !important;
     }
 
     .confidence-card {
-        padding: 5px 10px !important;
+        padding: 4px 9px !important;
         margin: 0 0 5px !important;
-        border-radius: 0.52rem !important;
+        border-radius: 0.50rem !important;
         flex: 0 0 auto !important;
     }
 
     .confidence-head {
-        font-size: 0.68rem !important;
+        font-size: 0.66rem !important;
         margin-bottom: 3px !important;
         gap: 8px !important;
     }
 
     .confidence-value {
-        font-size: 0.80rem !important;
+        font-size: 0.76rem !important;
     }
 
     .progress-track {
@@ -1195,21 +1226,133 @@ DASHBOARD_HTML = r"""
 
     .metric-row {
         padding-bottom: 3px !important;
-        font-size: 0.65rem !important;
+        font-size: 0.64rem !important;
     }
 
     .alert-note {
         margin-top: auto !important;
         padding: 5px 9px !important;
         border-radius: 0.46rem !important;
-        font-size: 0.66rem !important;
+        font-size: 0.64rem !important;
         flex: 0 0 auto !important;
     }
 
     .alert-note small {
         margin-top: 1px !important;
-        font-size: 0.56rem !important;
+        font-size: 0.55rem !important;
     }
+
+
+
+    /* FINAL RESULT CARD BALANCE PATCH: avoid breathing cut, move context down, enlarge confidence and lower alert */
+    .result-card {
+        overflow: hidden !important;
+        padding: 14px 16px 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #resultContent {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+    }
+
+    .result-box {
+        width: calc(100% - 22px) !important;
+        min-height: 102px !important;
+        margin: 0 auto 10px !important;
+        padding: 22px 22px !important;
+        border-width: 2px !important;
+        border-radius: 0.86rem !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px !important;
+        font-size: 1.34rem !important;
+        line-height: 1.08 !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.006em !important;
+        flex: 0 0 auto !important;
+        transform-origin: center !important;
+        animation: breatheResult 1.85s ease-in-out infinite !important;
+        will-change: transform, box-shadow !important;
+    }
+
+    .result-box span:first-child {
+        font-size: 1.26rem !important;
+        line-height: 1 !important;
+    }
+
+    .result-box span:last-child {
+        line-height: 1.08 !important;
+    }
+
+    @keyframes breatheResult {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+        50% {
+            transform: scale(1.006);
+            box-shadow: 0 0 0 4px var(--breathe-shadow);
+        }
+    }
+
+    .result-context {
+        margin: 5px 0 8px !important;
+        font-size: 0.64rem !important;
+        line-height: 1.18 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .confidence-card {
+        padding: 7px 11px !important;
+        margin: 0 0 7px !important;
+        border-radius: 0.58rem !important;
+        flex: 0 0 auto !important;
+    }
+
+    .confidence-head {
+        font-size: 0.72rem !important;
+        margin-bottom: 5px !important;
+        gap: 9px !important;
+    }
+
+    .confidence-value {
+        font-size: 0.90rem !important;
+        font-weight: 700 !important;
+    }
+
+    .progress-track {
+        height: 7px !important;
+    }
+
+    .metric-list {
+        gap: 3px !important;
+        flex: 0 0 auto !important;
+    }
+
+    .metric-row {
+        padding-bottom: 4px !important;
+        font-size: 0.68rem !important;
+    }
+
+    .alert-note {
+        min-height: 50px !important;
+        margin-top: auto !important;
+        padding: 8px 11px !important;
+        border-radius: 0.52rem !important;
+        font-size: 0.72rem !important;
+        flex: 0 0 auto !important;
+    }
+
+    .alert-note small {
+        margin-top: 3px !important;
+        font-size: 0.62rem !important;
+    }
+
 </style>
 </head>
 <body>
