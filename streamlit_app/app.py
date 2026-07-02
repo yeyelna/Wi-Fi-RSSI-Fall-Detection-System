@@ -245,6 +245,7 @@ DASHBOARD_HTML = r"""
     .first-row {
         display: grid;
         grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.82fr) minmax(0, 0.96fr);
+        grid-auto-rows: 430px;
         gap: 14px;
         margin-bottom: 14px;
         align-items: stretch;
@@ -400,16 +401,15 @@ DASHBOARD_HTML = r"""
         word-break: break-word;
     }
 
-    .input-panel, .signal-card {
+    .input-panel, .signal-card, .result-card {
         height: 430px;
         min-height: 430px;
+        max-height: 430px;
     }
 
     .result-card {
-        height: auto;
-        min-height: 430px;
-        overflow: visible;
-        padding-bottom: 20px;
+        overflow: hidden;
+        padding-bottom: 12px;
     }
 
     .signal-card {
@@ -456,14 +456,14 @@ DASHBOARD_HTML = r"""
     }
 
     .result-box {
-        margin-bottom: 13px;
-        padding: 20px 18px;
+        margin-bottom: 9px;
+        padding: 13px 16px;
         border: 1.5px solid;
-        border-radius: 0.75rem;
+        border-radius: 0.68rem;
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 1.05rem;
+        gap: 9px;
+        font-size: 0.98rem;
         font-weight: 600;
         letter-spacing: 0.005em;
     }
@@ -497,21 +497,21 @@ DASHBOARD_HTML = r"""
 
     .metric-list {
         display: grid;
-        gap: 8px;
+        gap: 5px;
     }
 
     .result-context {
-        margin: -2px 0 13px;
+        margin: -1px 0 9px;
         color: #475569;
-        font-size: 0.74rem;
-        line-height: 1.45;
+        font-size: 0.68rem;
+        line-height: 1.32;
     }
 
     .confidence-card {
         background: #f8fafc;
-        border-radius: 0.62rem;
-        padding: 8px 12px;
-        margin-bottom: 8px;
+        border-radius: 0.58rem;
+        padding: 7px 10px;
+        margin-bottom: 6px;
         border: 1px solid #eef2f7;
     }
 
@@ -519,20 +519,20 @@ DASHBOARD_HTML = r"""
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
+        gap: 10px;
         color: #1f3454;
-        font-size: 0.80rem;
-        margin-bottom: 5px;
+        font-size: 0.73rem;
+        margin-bottom: 4px;
     }
 
     .confidence-value {
         color: #030213;
-        font-size: 0.92rem;
+        font-size: 0.84rem;
         font-weight: 600;
     }
 
     .progress-track {
-        height: 8px;
+        height: 7px;
         border-radius: 999px;
         background: #e5e7eb;
         overflow: hidden;
@@ -551,10 +551,10 @@ DASHBOARD_HTML = r"""
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        gap: 10px;
-        padding-bottom: 8px;
+        gap: 9px;
+        padding-bottom: 5px;
         border-bottom: 1px solid #f1f5f9;
-        font-size: 0.76rem;
+        font-size: 0.68rem;
     }
 
     .metric-row:last-child { border-bottom: none; }
@@ -571,17 +571,18 @@ DASHBOARD_HTML = r"""
     }
 
     .alert-note {
-        margin-top: 8px;
-        padding: 10px 13px;
+        margin-top: 7px;
+        padding: 8px 11px;
         border: 1px solid;
-        border-radius: 0.6rem;
-        font-size: 0.84rem;
+        border-radius: 0.55rem;
+        font-size: 0.74rem;
         font-weight: 600;
     }
 
     .alert-note small {
         display: block;
-        margin-top: 5px;
+        margin-top: 3px;
+        font-size: 0.64rem;
         font-weight: 400;
     }
 
@@ -903,7 +904,7 @@ DASHBOARD_HTML = r"""
         }
 
         .header-subtitle {
-            font-size: 0.92rem;
+            font-size: 0.84rem;
         }
 
         .status-grid {
