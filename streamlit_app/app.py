@@ -3,7 +3,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="Wi-Fi RSSI Fall Detection System",
-    page_icon="📶",
+    page_icon="🛜",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -1359,7 +1359,7 @@ DASHBOARD_HTML = r"""
 <div class="dashboard">
     <header class="header-card card">
         <div class="header-brand">
-            <div class="brand-symbol" aria-hidden="true">📶</div>
+            <div class="brand-symbol" aria-hidden="true">🛜</div>
             <div class="brand-text">
                 <h1 class="header-title">Wi-Fi RSSI Fall Detection System</h1>
                 <p class="header-subtitle">Official nested-CV outer-test result explorer for Wi-Fi RSSI fall detection</p>
