@@ -134,17 +134,17 @@ DASHBOARD_HTML = r"""
     }
 
     .brand-symbol {
-        width: 52px;
-        height: 52px;
-        display: grid;
-        place-items: center;
+        width: auto;
+        height: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         flex: 0 0 auto;
-        border-radius: 16px;
-        color: #1d4ed8;
-        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-        border: 1px solid #bfdbfe;
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.10);
-        font-size: 1.55rem;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+        font-size: 2.25rem;
         line-height: 1;
     }
 
@@ -962,10 +962,10 @@ DASHBOARD_HTML = r"""
         .header-card, .panel, .history-card { padding: 14px; }
 
         .brand-symbol {
-            width: 44px;
-            height: 44px;
-            border-radius: 14px;
-            font-size: 1.25rem;
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            font-size: 1.75rem;
         }
 
         .header-title {
