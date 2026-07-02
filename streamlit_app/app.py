@@ -1262,7 +1262,7 @@ DASHBOARD_HTML = r"""
 
     .result-box {
         width: calc(100% - 44px) !important;
-        min-height: 84px !important;
+        min-height: 75px !important;
         margin: 0 auto 10px !important;
         padding: 15px 22px !important;
         border-width: 2px !important;
