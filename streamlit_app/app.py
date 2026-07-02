@@ -456,28 +456,53 @@ DASHBOARD_HTML = r"""
     }
 
     .result-box {
-        margin-bottom: 9px;
-        padding: 13px 16px;
+        margin-bottom: 8px;
+        padding: 17px 16px;
         border: 1.5px solid;
-        border-radius: 0.68rem;
+        border-radius: 0.72rem;
         display: flex;
         align-items: center;
-        gap: 9px;
-        font-size: 0.98rem;
-        font-weight: 600;
-        letter-spacing: 0.005em;
+        gap: 10px;
+        font-size: 1.06rem;
+        font-weight: 700;
+        letter-spacing: 0.006em;
+        transform-origin: center;
+        animation: breatheResult 1.85s ease-in-out infinite;
+        will-change: transform, box-shadow;
+    }
+
+    .result-box span:first-child {
+        font-size: 1.05rem;
+        line-height: 1;
     }
 
     .fall-box {
         color: var(--red);
         background: var(--red-soft);
         border-color: #fda4af;
+        --breathe-shadow: rgba(212, 24, 61, 0.16);
     }
 
     .normal-box {
         color: var(--green);
         background: var(--green-soft);
         border-color: #86efac;
+        --breathe-shadow: rgba(22, 163, 74, 0.14);
+    }
+
+    @keyframes breatheResult {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+        50% {
+            transform: scale(1.012);
+            box-shadow: 0 0 0 5px var(--breathe-shadow);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .result-box { animation: none; }
     }
 
     .invalid-box {
@@ -497,21 +522,21 @@ DASHBOARD_HTML = r"""
 
     .metric-list {
         display: grid;
-        gap: 5px;
+        gap: 4px;
     }
 
     .result-context {
-        margin: -1px 0 9px;
+        margin: -1px 0 7px;
         color: #475569;
-        font-size: 0.68rem;
-        line-height: 1.32;
+        font-size: 0.66rem;
+        line-height: 1.26;
     }
 
     .confidence-card {
         background: #f8fafc;
-        border-radius: 0.58rem;
-        padding: 7px 10px;
-        margin-bottom: 6px;
+        border-radius: 0.56rem;
+        padding: 6px 10px;
+        margin-bottom: 5px;
         border: 1px solid #eef2f7;
     }
 
@@ -521,8 +546,8 @@ DASHBOARD_HTML = r"""
         justify-content: space-between;
         gap: 10px;
         color: #1f3454;
-        font-size: 0.73rem;
-        margin-bottom: 4px;
+        font-size: 0.72rem;
+        margin-bottom: 3px;
     }
 
     .confidence-value {
@@ -532,7 +557,7 @@ DASHBOARD_HTML = r"""
     }
 
     .progress-track {
-        height: 7px;
+        height: 6px;
         border-radius: 999px;
         background: #e5e7eb;
         overflow: hidden;
@@ -551,10 +576,10 @@ DASHBOARD_HTML = r"""
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        gap: 9px;
-        padding-bottom: 5px;
+        gap: 8px;
+        padding-bottom: 4px;
         border-bottom: 1px solid #f1f5f9;
-        font-size: 0.68rem;
+        font-size: 0.66rem;
     }
 
     .metric-row:last-child { border-bottom: none; }
@@ -571,18 +596,18 @@ DASHBOARD_HTML = r"""
     }
 
     .alert-note {
-        margin-top: 7px;
-        padding: 8px 11px;
+        margin-top: 6px;
+        padding: 6px 10px;
         border: 1px solid;
-        border-radius: 0.55rem;
-        font-size: 0.74rem;
+        border-radius: 0.50rem;
+        font-size: 0.70rem;
         font-weight: 600;
     }
 
     .alert-note small {
         display: block;
-        margin-top: 3px;
-        font-size: 0.64rem;
+        margin-top: 2px;
+        font-size: 0.60rem;
         font-weight: 400;
     }
 
