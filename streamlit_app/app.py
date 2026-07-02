@@ -1104,6 +1104,112 @@ DASHBOARD_HTML = r"""
         padding: 8px 10px;
         line-height: 1.18;
     }
+
+
+    /* FINAL RESULT CARD FIT FIX: keep all result content inside the fixed 430px card */
+    .first-row {
+        grid-auto-rows: 430px !important;
+        align-items: stretch !important;
+    }
+
+    .input-panel, .signal-card, .result-card {
+        height: 430px !important;
+        min-height: 430px !important;
+        max-height: 430px !important;
+    }
+
+    .result-card {
+        overflow: hidden !important;
+        padding: 14px 16px 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .result-card .section-title {
+        margin-bottom: 9px !important;
+        flex: 0 0 auto !important;
+    }
+
+    .current-file {
+        margin: -1px 0 8px !important;
+        font-size: 0.68rem !important;
+        flex: 0 0 auto !important;
+    }
+
+    #resultContent {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .result-box {
+        margin: 0 0 6px !important;
+        padding: 18px 20px !important;
+        min-height: 82px !important;
+        border-radius: 0.80rem !important;
+        gap: 13px !important;
+        font-size: 1.22rem !important;
+        line-height: 1.08 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .result-box span:first-child {
+        font-size: 1.18rem !important;
+    }
+
+    .result-context {
+        margin: 0 0 6px !important;
+        font-size: 0.62rem !important;
+        line-height: 1.15 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .confidence-card {
+        padding: 5px 10px !important;
+        margin: 0 0 5px !important;
+        border-radius: 0.52rem !important;
+        flex: 0 0 auto !important;
+    }
+
+    .confidence-head {
+        font-size: 0.68rem !important;
+        margin-bottom: 3px !important;
+        gap: 8px !important;
+    }
+
+    .confidence-value {
+        font-size: 0.80rem !important;
+    }
+
+    .progress-track {
+        height: 5px !important;
+    }
+
+    .metric-list {
+        gap: 2px !important;
+        flex: 0 0 auto !important;
+    }
+
+    .metric-row {
+        padding-bottom: 3px !important;
+        font-size: 0.65rem !important;
+    }
+
+    .alert-note {
+        margin-top: auto !important;
+        padding: 5px 9px !important;
+        border-radius: 0.46rem !important;
+        font-size: 0.66rem !important;
+        flex: 0 0 auto !important;
+    }
+
+    .alert-note small {
+        margin-top: 1px !important;
+        font-size: 0.56rem !important;
+    }
 </style>
 </head>
 <body>
@@ -2170,4 +2276,4 @@ try {
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=1140, scrolling=False)
+components.html(DASHBOARD_HTML, height=1200, scrolling=False)
