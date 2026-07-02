@@ -1230,7 +1230,7 @@ DASHBOARD_HTML = r"""
     }
 
     .alert-note {
-        margin-top: auto !important;
+        margin-top: 13px !important;
         padding: 5px 9px !important;
         border-radius: 0.46rem !important;
         font-size: 0.64rem !important;
@@ -1261,9 +1261,9 @@ DASHBOARD_HTML = r"""
     }
 
     .result-box {
-        width: calc(100% - 44px) !important;
+        width: calc(100% - 72px) !important;
         min-height: 75px !important;
-        margin: 0 auto 10px !important;
+        margin: 8px auto 12px !important;
         padding: 15px 22px !important;
         border-width: 2px !important;
         border-radius: 0.86rem !important;
@@ -1301,7 +1301,7 @@ DASHBOARD_HTML = r"""
     }
 
     .result-context {
-        margin: 5px 0 8px !important;
+        margin: 9px 0 9px !important;
         font-size: 0.64rem !important;
         line-height: 1.18 !important;
         flex: 0 0 auto !important;
@@ -1341,7 +1341,7 @@ DASHBOARD_HTML = r"""
 
     .alert-note {
         min-height: 50px !important;
-        margin-top: auto !important;
+        margin-top: 13px !important;
         padding: 8px 11px !important;
         border-radius: 0.52rem !important;
         font-size: 0.72rem !important;
