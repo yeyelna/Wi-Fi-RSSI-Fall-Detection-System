@@ -125,6 +125,33 @@ DASHBOARD_HTML = r"""
         margin-bottom: 18px;
     }
 
+
+    .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+    }
+
+    .brand-symbol {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        border-radius: 16px;
+        color: #1d4ed8;
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border: 1px solid #bfdbfe;
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.10);
+        font-size: 1.55rem;
+        line-height: 1;
+    }
+
+    .brand-text {
+        min-width: 0;
+    }
+
     .header-title {
         margin: 0;
         color: var(--foreground);
@@ -934,6 +961,13 @@ DASHBOARD_HTML = r"""
 
         .header-card, .panel, .history-card { padding: 14px; }
 
+        .brand-symbol {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            font-size: 1.25rem;
+        }
+
         .header-title {
             font-size: clamp(1.55rem, 7vw, 2rem);
         }
@@ -1038,9 +1072,12 @@ DASHBOARD_HTML = r"""
 <body>
 <div class="dashboard">
     <header class="header-card card">
-        <div>
-            <h1 class="header-title">Wi-Fi RSSI Fall Detection System</h1>
-            <p class="header-subtitle">Official nested-CV outer-test result explorer for Wi-Fi RSSI fall detection</p>
+        <div class="header-brand">
+            <div class="brand-symbol" aria-hidden="true">📶</div>
+            <div class="brand-text">
+                <h1 class="header-title">Wi-Fi RSSI Fall Detection System</h1>
+                <p class="header-subtitle">Official nested-CV outer-test result explorer for Wi-Fi RSSI fall detection</p>
+            </div>
         </div>
         <div class="status-grid">
             <div id="backendStatusCard" class="status-card status-connected">
@@ -1828,7 +1865,7 @@ async function loadModelInfo() {
 
 async function loadHistory() {
     try {
-        const response = await fetch(`${API_BASE_URL}/history?limit=20`);
+        const response = await fetch(`${API_BASE_URL}/history?limit=10`);
         if (!response.ok) throw new Error("History failed");
         const data = await response.json();
         const records = Array.isArray(data) ? data : data.items || data.records || data.history || [];
@@ -2040,4 +2077,4 @@ document.addEventListener("DOMContentLoaded", bootDashboard);
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=2600, scrolling=True)
+components.html(DASHBOARD_HTML, height=1520, scrolling=False)
