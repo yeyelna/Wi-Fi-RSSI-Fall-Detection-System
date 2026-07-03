@@ -1,26 +1,25 @@
 Method,DisplayName,Event,Label,PredLabel,Errors
-CWT_EventAwareVeto,CWT + Event-Aware Veto,sitting,0,1,18
+CWT_EventAwareVeto,CWT + Event-Aware Veto,sitting,0,1,17
 CWT_EventAwareVeto,CWT + Event-Aware Veto,bending,0,1,10
-CWT_EventAwareVeto,CWT + Event-Aware Veto,sit and fall,1,0,9
+CWT_EventAwareVeto,CWT + Event-Aware Veto,sit and fall,1,0,10
 CWT_EventAwareVeto,CWT + Event-Aware Veto,stumble,1,0,5
-FFT_EventAwareVeto,FFT + Event-Aware Veto,bending,0,1,30
-FFT_EventAwareVeto,FFT + Event-Aware Veto,laying,0,1,22
-FFT_EventAwareVeto,FFT + Event-Aware Veto,squatting,0,1,19
-FFT_EventAwareVeto,FFT + Event-Aware Veto,prostrating,0,1,18
-FFT_EventAwareVeto,FFT + Event-Aware Veto,fainting,1,0,17
-FFT_EventAwareVeto,FFT + Event-Aware Veto,sitting,0,1,17
-FFT_EventAwareVeto,FFT + Event-Aware Veto,walk and fall,1,0,17
+FFT_EventAwareVeto,FFT + Event-Aware Veto,bending,0,1,31
+FFT_EventAwareVeto,FFT + Event-Aware Veto,prostrating,0,1,27
+FFT_EventAwareVeto,FFT + Event-Aware Veto,walk and fall,1,0,23
+FFT_EventAwareVeto,FFT + Event-Aware Veto,squatting,0,1,22
+FFT_EventAwareVeto,FFT + Event-Aware Veto,stumble,1,0,17
+FFT_EventAwareVeto,FFT + Event-Aware Veto,fainting,1,0,15
 FFT_EventAwareVeto,FFT + Event-Aware Veto,sit and fall,1,0,15
-FFT_EventAwareVeto,FFT + Event-Aware Veto,slipping,1,0,15
-FFT_EventAwareVeto,FFT + Event-Aware Veto,stumble,1,0,13
-FFT_EventAwareVeto,FFT + Event-Aware Veto,kneeling,0,1,10
+FFT_EventAwareVeto,FFT + Event-Aware Veto,sitting,0,1,15
+FFT_EventAwareVeto,FFT + Event-Aware Veto,laying,0,1,14
+FFT_EventAwareVeto,FFT + Event-Aware Veto,slipping,1,0,11
 MTFF_EventAwareVeto,MTFF + Event-Aware Veto,bending,0,1,10
-MTFF_EventAwareVeto,MTFF + Event-Aware Veto,sit and fall,1,0,4
+MTFF_EventAwareVeto,MTFF + Event-Aware Veto,sit and fall,1,0,6
 MTFF_EventAwareVeto,MTFF + Event-Aware Veto,stumble,1,0,2
-STFT_EventAwareVeto,STFT + Event-Aware Veto,sit and fall,1,0,13
-STFT_EventAwareVeto,STFT + Event-Aware Veto,bending,0,1,10
-STFT_EventAwareVeto,STFT + Event-Aware Veto,slipping,1,0,6
-STFT_EventAwareVeto,STFT + Event-Aware Veto,squatting,0,1,6
-STFT_EventAwareVeto,STFT + Event-Aware Veto,fainting,1,0,4
-STFT_EventAwareVeto,STFT + Event-Aware Veto,sitting,0,1,2
+STFT_EventAwareVeto,STFT + Event-Aware Veto,bending,0,1,20
+STFT_EventAwareVeto,STFT + Event-Aware Veto,sit and fall,1,0,19
+STFT_EventAwareVeto,STFT + Event-Aware Veto,squatting,0,1,10
+STFT_EventAwareVeto,STFT + Event-Aware Veto,slipping,1,0,9
+STFT_EventAwareVeto,STFT + Event-Aware Veto,sitting,0,1,8
+STFT_EventAwareVeto,STFT + Event-Aware Veto,fainting,1,0,6
 STFT_EventAwareVeto,STFT + Event-Aware Veto,walk and fall,1,0,1

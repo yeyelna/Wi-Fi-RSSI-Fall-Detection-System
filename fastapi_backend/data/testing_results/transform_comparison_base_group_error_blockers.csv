@@ -9,87 +9,94 @@ CWT_EventAwareVeto,CWT + Event-Aware Veto,data843.mat,sit and fall,1,0,2
 CWT_EventAwareVeto,CWT + Event-Aware Veto,data844.mat,sit and fall,1,0,2
 CWT_EventAwareVeto,CWT + Event-Aware Veto,data854.mat,sit and fall,1,0,2
 CWT_EventAwareVeto,CWT + Event-Aware Veto,data1659.mat,stumble,1,0,1
-CWT_EventAwareVeto,CWT + Event-Aware Veto,data4059.mat,sitting,0,1,1
+CWT_EventAwareVeto,CWT + Event-Aware Veto,data845.mat,sit and fall,1,0,1
 CWT_EventAwareVeto,CWT + Event-Aware Veto,data847.mat,sit and fall,1,0,1
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4059.mat,sitting,0,1,10
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4191.mat,bending,0,1,10
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4193.mat,bending,0,1,10
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4194.mat,bending,0,1,10
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data4328.mat,laying,0,1,10
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4330.mat,laying,0,1,10
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data4465.mat,kneeling,0,1,10
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data4596.mat,squatting,0,1,10
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4599.mat,squatting,0,1,10
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data4732.mat,prostrating,0,1,10
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4734.mat,prostrating,0,1,10
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data4596.mat,squatting,0,1,9
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4735.mat,prostrating,0,1,7
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data4058.mat,sitting,0,1,4
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data4327.mat,laying,0,1,4
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data4058.mat,sitting,0,1,3
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data1652.mat,stumble,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data1653.mat,stumble,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data1654.mat,stumble,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data1656.mat,stumble,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data1661.mat,stumble,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data1667.mat,stumble,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data1673.mat,stumble,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data1678.mat,stumble,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data2464.mat,slipping,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data2466.mat,slipping,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data2467.mat,slipping,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data2474.mat,slipping,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data2468.mat,slipping,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data2478.mat,slipping,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data2481.mat,slipping,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data2489.mat,slipping,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data2483.mat,slipping,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data3272.mat,fainting,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data3285.mat,fainting,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data3287.mat,fainting,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data3288.mat,fainting,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data3291.mat,fainting,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data3294.mat,fainting,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data3293.mat,fainting,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data3297.mat,fainting,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data3299.mat,fainting,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data33.mat,walk and fall,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data36.mat,walk and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data37.mat,walk and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data38.mat,walk and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data40.mat,walk and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data4057.mat,sitting,0,1,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data4327.mat,laying,0,1,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data44.mat,walk and fall,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data4598.mat,squatting,0,1,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data47.mat,walk and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data48.mat,walk and fall,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data54.mat,walk and fall,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data57.mat,walk and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data59.mat,walk and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data842.mat,sit and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data844.mat,sit and fall,1,0,2
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data846.mat,sit and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data849.mat,sit and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data852.mat,sit and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data856.mat,sit and fall,1,0,2
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data863.mat,sit and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data866.mat,sit and fall,1,0,2
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data1655.mat,stumble,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data1661.mat,stumble,1,0,1
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data1657.mat,stumble,1,0,1
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data1677.mat,stumble,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data2470.mat,slipping,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data3282.mat,fainting,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data3284.mat,fainting,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data3293.mat,fainting,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data33.mat,walk and fall,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data36.mat,walk and fall,1,0,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data4056.mat,sitting,0,1,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data4732.mat,prostrating,0,1,1
-FFT_EventAwareVeto,FFT + Event-Aware Veto,data54.mat,walk and fall,1,0,1
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data2489.mat,slipping,1,0,1
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data3281.mat,fainting,1,0,1
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data4195.mat,bending,0,1,1
+FFT_EventAwareVeto,FFT + Event-Aware Veto,data60.mat,walk and fall,1,0,1
 FFT_EventAwareVeto,FFT + Event-Aware Veto,data854.mat,sit and fall,1,0,1
 MTFF_EventAwareVeto,MTFF + Event-Aware Veto,data4191.mat,bending,0,1,10
+MTFF_EventAwareVeto,MTFF + Event-Aware Veto,data841.mat,sit and fall,1,0,2
 MTFF_EventAwareVeto,MTFF + Event-Aware Veto,data842.mat,sit and fall,1,0,2
 MTFF_EventAwareVeto,MTFF + Event-Aware Veto,data843.mat,sit and fall,1,0,2
 MTFF_EventAwareVeto,MTFF + Event-Aware Veto,data1656.mat,stumble,1,0,1
 MTFF_EventAwareVeto,MTFF + Event-Aware Veto,data1657.mat,stumble,1,0,1
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data4191.mat,bending,0,1,10
-STFT_EventAwareVeto,STFT + Event-Aware Veto,data4596.mat,squatting,0,1,6
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data4194.mat,bending,0,1,10
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data4596.mat,squatting,0,1,10
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data4057.mat,sitting,0,1,8
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data2464.mat,slipping,1,0,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data2467.mat,slipping,1,0,2
-STFT_EventAwareVeto,STFT + Event-Aware Veto,data2484.mat,slipping,1,0,2
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data2482.mat,slipping,1,0,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data2487.mat,slipping,1,0,2
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data3276.mat,fainting,1,0,2
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data3288.mat,fainting,1,0,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data3298.mat,fainting,1,0,2
-STFT_EventAwareVeto,STFT + Event-Aware Veto,data4056.mat,sitting,0,1,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data841.mat,sit and fall,1,0,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data842.mat,sit and fall,1,0,2
-STFT_EventAwareVeto,STFT + Event-Aware Veto,data846.mat,sit and fall,1,0,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data849.mat,sit and fall,1,0,2
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data850.mat,sit and fall,1,0,2
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data853.mat,sit and fall,1,0,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data865.mat,sit and fall,1,0,2
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data869.mat,sit and fall,1,0,2
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data870.mat,sit and fall,1,0,2
-STFT_EventAwareVeto,STFT + Event-Aware Veto,data3276.mat,fainting,1,0,1
-STFT_EventAwareVeto,STFT + Event-Aware Veto,data3286.mat,fainting,1,0,1
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data2484.mat,slipping,1,0,1
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data37.mat,walk and fall,1,0,1
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data848.mat,sit and fall,1,0,1
+STFT_EventAwareVeto,STFT + Event-Aware Veto,data863.mat,sit and fall,1,0,1
 STFT_EventAwareVeto,STFT + Event-Aware Veto,data864.mat,sit and fall,1,0,1
