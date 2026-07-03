@@ -1353,6 +1353,142 @@ DASHBOARD_HTML = r"""
         font-size: 0.62rem !important;
     }
 
+
+
+    /* FINAL RESPONSIVE VIEW PATCH: result alert + iframe auto height */
+    .dashboard {
+        padding-bottom: 10px !important;
+    }
+
+    .history-card {
+        margin-bottom: 0 !important;
+    }
+
+    .result-box {
+        width: min(calc(100% - 32px), 720px) !important;
+        max-width: 100% !important;
+        min-height: 75px !important;
+        margin: 8px auto 12px !important;
+        padding: clamp(10px, 1.45vw, 15px) clamp(14px, 2vw, 22px) !important;
+        gap: clamp(8px, 1.25vw, 15px) !important;
+        font-size: clamp(0.92rem, 1.35vw, 1.34rem) !important;
+        line-height: 1.08 !important;
+        white-space: normal !important;
+        text-align: left !important;
+        justify-content: center !important;
+        overflow: visible !important;
+    }
+
+    .result-box span:first-child {
+        flex: 0 0 auto !important;
+        font-size: clamp(0.95rem, 1.3vw, 1.26rem) !important;
+    }
+
+    .result-box span:last-child {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+    }
+
+    @media (max-width: 1100px) {
+        .first-row {
+            grid-template-columns: 1fr !important;
+            grid-auto-rows: auto !important;
+        }
+
+        .input-panel,
+        .signal-card,
+        .result-card {
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: none !important;
+        }
+
+        .result-card {
+            overflow: visible !important;
+        }
+
+        #resultContent {
+            overflow: visible !important;
+        }
+
+        .chart-wrap {
+            height: 360px !important;
+            min-height: 360px !important;
+        }
+
+        .result-box {
+            width: min(calc(100% - 28px), 720px) !important;
+            font-size: clamp(1.05rem, 3.6vw, 1.34rem) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .dashboard {
+            padding: 10px 10px 10px !important;
+        }
+
+        .first-row,
+        .second-row {
+            grid-template-columns: 1fr !important;
+            gap: 12px !important;
+        }
+
+        .input-panel,
+        .signal-card,
+        .result-card {
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: none !important;
+        }
+
+        .result-card {
+            overflow: visible !important;
+            padding-bottom: 14px !important;
+        }
+
+        #resultContent {
+            overflow: visible !important;
+        }
+
+        .result-box {
+            width: calc(100% - 24px) !important;
+            min-height: 68px !important;
+            padding: 12px 14px !important;
+            gap: 10px !important;
+            font-size: clamp(0.98rem, 5.2vw, 1.22rem) !important;
+            border-radius: 0.78rem !important;
+        }
+
+        .result-box span:first-child {
+            font-size: clamp(0.95rem, 5vw, 1.14rem) !important;
+        }
+
+        .chart-wrap {
+            height: 320px !important;
+            min-height: 320px !important;
+        }
+
+        .history-card {
+            height: 300px !important;
+            min-height: 300px !important;
+            max-height: 300px !important;
+            margin-bottom: 0 !important;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .result-box {
+            width: calc(100% - 18px) !important;
+            min-height: 64px !important;
+            padding: 10px 12px !important;
+            gap: 8px !important;
+            font-size: clamp(0.90rem, 5.6vw, 1.05rem) !important;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -2414,9 +2550,54 @@ try {
     // ResizeObserver is optional; fixed height still works if unavailable.
 }
 
+
+/* FINAL RESPONSIVE HEIGHT RESIZER */
+function resizeStreamlitFrameToDashboard() {
+    const dashboard = document.querySelector(".dashboard");
+    if (!dashboard) return;
+
+    const body = document.body;
+    const html = document.documentElement;
+    const dashboardHeight = dashboard.scrollHeight || dashboard.getBoundingClientRect().height || 0;
+    const bodyHeight = body ? body.scrollHeight : 0;
+    const htmlHeight = html ? html.scrollHeight : 0;
+    const height = Math.ceil(Math.max(dashboardHeight, bodyHeight, htmlHeight) + 10);
+
+    window.parent.postMessage({
+        isStreamlitMessage: true,
+        type: "streamlit:setFrameHeight",
+        height: height
+    }, "*");
+}
+
+function queueDashboardResize() {
+    window.requestAnimationFrame(() => {
+        resizeStreamlitFrameToDashboard();
+        setTimeout(resizeStreamlitFrameToDashboard, 80);
+    });
+}
+
+window.addEventListener("load", queueDashboardResize);
+window.addEventListener("resize", queueDashboardResize);
+window.addEventListener("orientationchange", queueDashboardResize);
+setTimeout(queueDashboardResize, 150);
+setTimeout(queueDashboardResize, 700);
+setTimeout(queueDashboardResize, 1400);
+
+try {
+    const responsiveDashboardObserver = new MutationObserver(queueDashboardResize);
+    responsiveDashboardObserver.observe(document.querySelector(".dashboard"), {
+        childList: true,
+        subtree: true,
+        attributes: true
+    });
+} catch (error) {
+    // Fixed iframe fallback remains available if MutationObserver is unavailable.
+}
+
 </script>
 </body>
 </html>
 """
 
-components.html(DASHBOARD_HTML, height=1200, scrolling=False)
+components.html(DASHBOARD_HTML, height=900, scrolling=True)
