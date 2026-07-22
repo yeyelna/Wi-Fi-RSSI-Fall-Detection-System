@@ -1489,6 +1489,53 @@ DASHBOARD_HTML = r"""
         }
     }
 
+
+    /* SAVED TESTING DATA PICKER */
+    .saved-data-box {
+        margin-top: 12px;
+        padding: 10px;
+        border: 1px solid #eef2f7;
+        border-radius: 0.58rem;
+        background: #fbfdff;
+    }
+
+    .saved-data-title {
+        color: var(--foreground);
+        font-size: 0.76rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    .saved-data-sub {
+        color: var(--muted-foreground);
+        font-size: 0.66rem;
+        line-height: 1.25;
+        margin-bottom: 8px;
+    }
+
+    .sample-select {
+        width: 100%;
+        min-width: 0;
+        border: 1px solid #d8dee8;
+        border-radius: 0.50rem;
+        background: #ffffff;
+        color: var(--foreground);
+        padding: 8px 9px;
+        font-size: 0.70rem;
+        outline: none;
+    }
+
+    .sample-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
+    }
+
+    .sample-button {
+        margin-top: 8px !important;
+        padding: 8px 10px !important;
+        font-size: 0.70rem !important;
+    }
+
 </style>
 </head>
 <body>
@@ -1536,6 +1583,16 @@ DASHBOARD_HTML = r"""
                 <div id="selectedFileName" class="helper-text">No file selected</div>
                 <button id="uploadBtn" class="button button-secondary" onclick="uploadAndClassify()">Upload and Check Official Result</button>
                 <div id="uploadMessage"></div>
+
+                <div class="saved-data-box">
+                    <div class="saved-data-title">Saved Testing Data</div>
+                    <div class="saved-data-sub">Pick a saved testing file to visualise without manual upload.</div>
+                    <select id="sampleDataSelect" class="sample-select" onchange="handleSampleSelect()">
+                        <option value="">Loading saved testing data...</option>
+                    </select>
+                    <button id="sampleBtn" class="button button-secondary sample-button" onclick="loadSelectedSample()">Visualise Selected Testing Data</button>
+                    <div id="sampleMessage"></div>
+                </div>
             </article>
 
             <article class="card panel signal-card">
@@ -1671,6 +1728,8 @@ let state = {
     currentResult: null,
     currentFile: null,
     selectedFile: null,
+    sampleFiles: [],
+    selectedSamplePath: "",
     chart: null,
     loading: false
 };
@@ -2367,6 +2426,7 @@ function getRecordConfidence(record) {
 function getInputMode(record) {
     const mode = record.input_mode || "OFFICIAL TEST UPLOAD LOOKUP";
     const upper = String(mode).replace(/_/g, " ").toUpperCase();
+    if (upper.includes("SAVED")) return "SAVED TEST DATA";
     if (upper.includes("UPLOAD")) return "OFFICIAL TEST UPLOAD";
     if (upper.includes("OFFICIAL")) return "OFFICIAL TEST LOOKUP";
     if (upper.includes("LIVE")) return "LIVE MONITORING";
@@ -2431,6 +2491,93 @@ function renderHistory() {
         `;
     }).join("");
 }
+
+
+async function loadSampleFiles() {
+    const select = document.getElementById("sampleDataSelect");
+    if (!select) return;
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/testing/sample-files`);
+        if (!response.ok) throw new Error("Sample file list failed");
+        const data = await response.json();
+        const items = Array.isArray(data.items) ? data.items : [];
+        state.sampleFiles = items;
+        renderSampleFileOptions();
+        setMessage("sampleMessage", "");
+    } catch {
+        state.sampleFiles = [];
+        renderSampleFileOptions();
+        setMessage("sampleMessage", "Saved testing data is unavailable until Render is redeployed.", "error");
+    }
+}
+
+function renderSampleFileOptions() {
+    const select = document.getElementById("sampleDataSelect");
+    if (!select) return;
+
+    if (!Array.isArray(state.sampleFiles) || state.sampleFiles.length === 0) {
+        select.innerHTML = `<option value="">No saved testing data available</option>`;
+        state.selectedSamplePath = "";
+        return;
+    }
+
+    select.innerHTML = `<option value="">Choose saved testing data...</option>` + state.sampleFiles.map(item => {
+        const label = item.display_label || `${item.event || ""} / ${item.file_name || ""}`.replace(/^ \/ /, "");
+        return `<option value="${escapeHtml(item.relative_path)}">${escapeHtml(label)}</option>`;
+    }).join("");
+}
+
+function handleSampleSelect() {
+    const select = document.getElementById("sampleDataSelect");
+    state.selectedSamplePath = select ? select.value : "";
+    setMessage("sampleMessage", "");
+}
+
+async function loadSelectedSample() {
+    setMessage("sampleMessage", "");
+
+    const select = document.getElementById("sampleDataSelect");
+    const relativePath = select ? select.value : "";
+
+    if (!relativePath) {
+        setMessage("sampleMessage", "Please choose one saved testing file first.", "error");
+        return;
+    }
+
+    const selectedItem = state.sampleFiles.find(item => item.relative_path === relativePath) || {};
+    const displayName = selectedItem.file_name || relativePath.split("/").pop() || "saved testing file";
+
+    clearClassification(displayName);
+    setLoading("sampleBtn", true, "Loading saved data...");
+
+    try {
+        const data = await safeFetch(`${API_BASE_URL}/predict/sample`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ relative_path: relativePath })
+        });
+
+        const result = extractPredictionData(data);
+        if (!result) throw new Error("Unsupported");
+
+        state.currentFile = displayName;
+        state.currentResult = result;
+        renderResult();
+
+        const signal = extractSignal(data);
+        renderChart(signal);
+
+        await loadHistory();
+    } catch {
+        clearClassification(displayName);
+        renderChart(null);
+        setMessage("sampleMessage", friendlyErrorMessage(), "error");
+    } finally {
+        setLoading("sampleBtn", false);
+    }
+}
+
 
 function handleFileSelect() {
     const input = document.getElementById("fileUpload");
@@ -2522,7 +2669,7 @@ async function clearAllHistory() {
 async function bootDashboard() {
     renderResult();
     renderChart(null);
-    await Promise.all([loadHealth(), loadModelInfo(), loadHistory()]);
+    await Promise.all([loadHealth(), loadModelInfo(), loadHistory(), loadSampleFiles()]);
 }
 
 document.addEventListener("DOMContentLoaded", bootDashboard);
