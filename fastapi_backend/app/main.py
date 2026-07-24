@@ -34,9 +34,9 @@ app.add_middleware(
 store = OfficialTestingStore()
 init_db()
 
-
 class SampleTestingFileRequest(BaseModel):
     relative_path: str
+
 
 
 
@@ -75,6 +75,8 @@ def testing_files():
     return {"items": store.files()}
 
 
+
+
 @app.get("/testing/sample-files")
 def testing_sample_files():
     return {"items": list_sample_testing_files()}
@@ -85,23 +87,24 @@ def predict_sample_file(payload: SampleTestingFileRequest):
     try:
         clean_name, file_bytes = read_sample_testing_file(payload.relative_path)
         record = store.lookup(clean_name, input_mode="SAVED TEST DATA")
+
         try:
             record["signal_preview"] = envelope_preview_from_mat_bytes(file_bytes, clean_name)
         except Exception as sig_exc:
             record["signal_preview"] = None
             record["signal_preview_error"] = str(sig_exc)
+
         insert_record(record)
         return record
+
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=USER_FRIENDLY_NOT_FOUND)
+
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
+
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Saved testing data lookup failed: {str(exc)}")
-
-
-
-
 
 
 @app.post("/predict/batch")

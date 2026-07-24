@@ -1490,7 +1490,8 @@ DASHBOARD_HTML = r"""
     }
 
 
-    /* SAVED TESTING DATA PICKER */
+
+    /* EDITED INPUT PANEL ONLY: auto-upload + saved testing data picker + desktop-fit warnings */
     .saved-data-box {
         margin-top: 12px;
         padding: 10px;
@@ -1536,6 +1537,96 @@ DASHBOARD_HTML = r"""
         font-size: 0.70rem !important;
     }
 
+    @media (min-width: 1101px) {
+        .input-panel {
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            padding: 14px !important;
+        }
+
+        .input-panel .section-title {
+            margin-bottom: 8px !important;
+        }
+
+        .upload-only-note {
+            margin: 0 0 8px !important;
+            font-size: 0.65rem !important;
+            line-height: 1.22 !important;
+        }
+
+        .input-panel label {
+            margin-bottom: 4px !important;
+            font-size: 0.67rem !important;
+        }
+
+        .upload-box {
+            min-height: 82px !important;
+            padding: 10px !important;
+        }
+
+        .upload-main {
+            font-size: 0.73rem !important;
+        }
+
+        .upload-sub {
+            font-size: 0.62rem !important;
+        }
+
+        #selectedFileName {
+            min-height: 16px !important;
+            margin-top: 5px !important;
+            font-size: 0.64rem !important;
+            line-height: 1.18 !important;
+        }
+
+        #uploadMessage,
+        #sampleMessage {
+            min-height: 34px !important;
+            max-height: 34px !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            display: block !important;
+        }
+
+        #uploadMessage .message,
+        #sampleMessage .message {
+            margin-top: 6px !important;
+            padding: 7px 8px !important;
+            font-size: 0.61rem !important;
+            line-height: 1.15 !important;
+            border-radius: 0.44rem !important;
+        }
+
+        .saved-data-box {
+            margin-top: 4px !important;
+            padding: 8px !important;
+            border-radius: 0.52rem !important;
+        }
+
+        .saved-data-title {
+            font-size: 0.72rem !important;
+            margin-bottom: 2px !important;
+        }
+
+        .saved-data-sub {
+            font-size: 0.60rem !important;
+            line-height: 1.16 !important;
+            margin-bottom: 6px !important;
+        }
+
+        .sample-select {
+            padding: 7px 8px !important;
+            font-size: 0.65rem !important;
+            min-height: 34px !important;
+        }
+
+        .sample-button {
+            margin-top: 7px !important;
+            padding: 7px 8px !important;
+            font-size: 0.65rem !important;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -1568,10 +1659,13 @@ DASHBOARD_HTML = r"""
         <section class="first-row">
             <article class="card panel input-panel" id="inputPanel">
                 <h2 class="section-title">Input Panel</h2>
-                <p class="helper-text upload-only-note">Upload a .mat testing file to check its official nested-CV outer-test result and display the extracted envelope signal.</p>
 
+                <p class="helper-text upload-only-note">
+                    Upload a .mat testing file to check its official nested-CV outer-test result and display the extracted envelope signal.
+                </p>
 
                 <label for="fileUpload">Upload .mat File</label>
+
                 <div class="upload-box">
                     <input id="fileUpload" type="file" accept=".mat" onchange="handleFileSelect()" />
                     <div>
@@ -1580,17 +1674,22 @@ DASHBOARD_HTML = r"""
                         <div class="upload-sub">Accepted: .mat</div>
                     </div>
                 </div>
+
                 <div id="selectedFileName" class="helper-text">No file selected</div>
-                <button id="uploadBtn" class="button button-secondary" onclick="uploadAndClassify()">Upload and Check Official Result</button>
                 <div id="uploadMessage"></div>
 
                 <div class="saved-data-box">
                     <div class="saved-data-title">Saved Testing Data</div>
                     <div class="saved-data-sub">Pick a saved testing file to visualise without manual upload.</div>
+
                     <select id="sampleDataSelect" class="sample-select" onchange="handleSampleSelect()">
                         <option value="">Loading saved testing data...</option>
                     </select>
-                    <button id="sampleBtn" class="button button-secondary sample-button" onclick="loadSelectedSample()">Visualise Selected Testing Data</button>
+
+                    <button id="sampleBtn" class="button button-secondary sample-button" onclick="loadSelectedSample()">
+                        Visualise Selected Testing Data
+                    </button>
+
                     <div id="sampleMessage"></div>
                 </div>
             </article>
@@ -2426,7 +2525,6 @@ function getRecordConfidence(record) {
 function getInputMode(record) {
     const mode = record.input_mode || "OFFICIAL TEST UPLOAD LOOKUP";
     const upper = String(mode).replace(/_/g, " ").toUpperCase();
-    if (upper.includes("SAVED")) return "SAVED TEST DATA";
     if (upper.includes("UPLOAD")) return "OFFICIAL TEST UPLOAD";
     if (upper.includes("OFFICIAL")) return "OFFICIAL TEST LOOKUP";
     if (upper.includes("LIVE")) return "LIVE MONITORING";
@@ -2500,17 +2598,21 @@ async function loadSampleFiles() {
     try {
         const response = await fetch(`${API_BASE_URL}/testing/sample-files`);
         if (!response.ok) throw new Error("Sample file list failed");
+
         const data = await response.json();
         const items = Array.isArray(data.items) ? data.items : [];
+
         state.sampleFiles = items;
         renderSampleFileOptions();
         setMessage("sampleMessage", "");
+
     } catch {
         state.sampleFiles = [];
         renderSampleFileOptions();
         setMessage("sampleMessage", "Saved testing data is unavailable until Render is redeployed.", "error");
     }
 }
+
 
 function renderSampleFileOptions() {
     const select = document.getElementById("sampleDataSelect");
@@ -2528,11 +2630,13 @@ function renderSampleFileOptions() {
     }).join("");
 }
 
+
 function handleSampleSelect() {
     const select = document.getElementById("sampleDataSelect");
     state.selectedSamplePath = select ? select.value : "";
     setMessage("sampleMessage", "");
 }
+
 
 async function loadSelectedSample() {
     setMessage("sampleMessage", "");
@@ -2569,10 +2673,13 @@ async function loadSelectedSample() {
         renderChart(signal);
 
         await loadHistory();
+        setMessage("uploadMessage", "");
+
     } catch {
         clearClassification(displayName);
         renderChart(null);
         setMessage("sampleMessage", friendlyErrorMessage(), "error");
+
     } finally {
         setLoading("sampleBtn", false);
     }
@@ -2581,10 +2688,28 @@ async function loadSelectedSample() {
 
 function handleFileSelect() {
     const input = document.getElementById("fileUpload");
+
     state.selectedFile = input.files && input.files.length > 0 ? input.files[0] : null;
-    document.getElementById("selectedFileName").textContent = state.selectedFile ? state.selectedFile.name : "No file selected";
+
+    document.getElementById("selectedFileName").textContent =
+        state.selectedFile ? state.selectedFile.name : "No file selected";
+
     setMessage("uploadMessage", "");
+
+    if (state.selectedFile) {
+        const fileName = state.selectedFile.name || "";
+
+        if (!fileName.toLowerCase().endsWith(".mat")) {
+            clearClassification(fileName);
+            renderChart(null);
+            setMessage("uploadMessage", "Please upload a .mat file.", "error");
+            return;
+        }
+
+        uploadAndClassify();
+    }
 }
+
 
 async function uploadAndClassify() {
     setMessage("uploadMessage", "");
@@ -2596,7 +2721,7 @@ async function uploadAndClassify() {
     }
 
     clearClassification(state.selectedFile.name);
-    setLoading("uploadBtn", true, "Checking...");
+    setMessage("uploadMessage", "Checking uploaded .mat file...", "info");
 
     const formData = new FormData();
     formData.append("file", state.selectedFile);
@@ -2608,6 +2733,7 @@ async function uploadAndClassify() {
         });
 
         if (!response.ok) throw new Error("Upload failed");
+
         const data = await response.json();
 
         const result = extractPredictionData(data);
@@ -2621,14 +2747,15 @@ async function uploadAndClassify() {
         renderChart(signal);
 
         await loadHistory();
+        setMessage("uploadMessage", "");
+
     } catch {
         clearClassification(state.selectedFile ? state.selectedFile.name : null);
         renderChart(null);
         setMessage("uploadMessage", friendlyErrorMessage(), "error");
-    } finally {
-        setLoading("uploadBtn", false);
     }
 }
+
 
 async function deleteRecord(recordId) {
     if (!recordId || recordId === "undefined" || recordId === "null") {
@@ -2669,7 +2796,12 @@ async function clearAllHistory() {
 async function bootDashboard() {
     renderResult();
     renderChart(null);
-    await Promise.all([loadHealth(), loadModelInfo(), loadHistory(), loadSampleFiles()]);
+    await Promise.all([
+        loadHealth(),
+        loadModelInfo(),
+        loadHistory(),
+        loadSampleFiles()
+    ]);
 }
 
 document.addEventListener("DOMContentLoaded", bootDashboard);

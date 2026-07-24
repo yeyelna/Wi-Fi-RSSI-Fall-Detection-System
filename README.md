@@ -29,8 +29,3 @@ streamlit run app.py
 ```
 
 Open: http://localhost:8501
-
-
-## Saved Testing Data Picker
-
-The backend can include only the testing `.mat` files under `fastapi_backend/data/sample_testing_data`. The Streamlit input panel lets users select one saved testing file, load its official outer-test result, and display its envelope preview without manually uploading a file.
