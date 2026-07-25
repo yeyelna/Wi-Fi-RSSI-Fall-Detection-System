@@ -1842,8 +1842,8 @@ DASHBOARD_HTML = r"""
 
 
 
-    /* ABSOLUTE FINAL INPUT PANEL TWO BLUE BOXES */
-    .upload-data-box,
+    /* ABSOLUTE FINAL INPUT PANEL: Upload Testing Data + Saved Testing Data boxes */
+    .upload-testing-box,
     .saved-data-box {
         border: 1px solid #dbeafe !important;
         border-radius: 0.70rem !important;
@@ -1851,23 +1851,38 @@ DASHBOARD_HTML = r"""
         box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03) !important;
     }
 
-    .upload-data-box {
+    .upload-testing-box {
         padding: 10px !important;
         margin-top: 8px !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 12px !important;
     }
 
     .saved-data-box {
         padding: 10px !important;
-        margin-top: 10px !important;
+        margin-top: 12px !important;
     }
 
-    .upload-data-box label {
-        margin-bottom: 6px !important;
+    .input-box-title {
+        color: var(--foreground) !important;
+        font-size: 0.76rem !important;
+        font-weight: 600 !important;
+        margin-bottom: 3px !important;
+    }
+
+    .input-box-sub {
+        color: var(--muted-foreground) !important;
+        font-size: 0.64rem !important;
+        line-height: 1.22 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .upload-testing-box label {
+        margin-bottom: 5px !important;
+        font-size: 0.66rem !important;
     }
 
     .upload-box {
-        min-height: 90px !important;
+        min-height: 82px !important;
         border-radius: 0.58rem !important;
         background: #ffffff !important;
     }
@@ -1875,6 +1890,7 @@ DASHBOARD_HTML = r"""
     #selectedFileName {
         margin-top: 6px !important;
         margin-bottom: 0 !important;
+        min-height: 14px !important;
     }
 
     #uploadMessage:empty,
@@ -1889,18 +1905,18 @@ DASHBOARD_HTML = r"""
 
     #uploadMessage:not(:empty) {
         display: block !important;
-        min-height: 48px !important;
+        min-height: 46px !important;
         height: auto !important;
         max-height: none !important;
         overflow: visible !important;
-        margin: 6px 0 0 0 !important;
+        margin: 7px 0 0 0 !important;
     }
 
     #uploadMessage:not(:empty) .message {
         margin: 0 !important;
         padding: 8px 10px !important;
-        font-size: 0.64rem !important;
-        line-height: 1.18 !important;
+        font-size: 0.62rem !important;
+        line-height: 1.17 !important;
         white-space: normal !important;
         overflow: visible !important;
         max-height: none !important;
@@ -1928,24 +1944,28 @@ DASHBOARD_HTML = r"""
     }
 
     @media (min-width: 1101px) {
-        .upload-data-box {
+        .upload-testing-box {
             padding: 9px !important;
             margin-top: 7px !important;
-            margin-bottom: 10px !important;
+            margin-bottom: 12px !important;
         }
 
         .saved-data-box {
             padding: 9px !important;
-            margin-top: 10px !important;
+            margin-top: 12px !important;
+        }
+
+        .input-box-title {
+            font-size: 0.74rem !important;
+        }
+
+        .input-box-sub {
+            font-size: 0.60rem !important;
+            margin-bottom: 7px !important;
         }
 
         .upload-box {
-            min-height: 82px !important;
-        }
-
-        #uploadMessage:not(:empty) {
-            min-height: 48px !important;
-            margin-top: 6px !important;
+            min-height: 78px !important;
         }
     }
 
@@ -1986,7 +2006,10 @@ DASHBOARD_HTML = r"""
                     Upload a .mat testing file to check its official nested-CV outer-test result and display the extracted envelope signal.
                 </p>
 
-                <div class="upload-data-box">
+                <div class="upload-testing-box">
+                    <div class="input-box-title">Upload Testing Data</div>
+                    <div class="input-box-sub">Upload a .mat testing file to check its official result.</div>
+
                     <label for="fileUpload">Upload .mat File</label>
 
                     <div class="upload-box">
