@@ -1,0 +1,9 @@
+{
+  "created_at_malaysia_time": "2026-07-25T14:08:18+08:00",
+  "dashboard_public_url": "https://fall-detection-yeyelna.streamlit.app/",
+  "render_health_url": "https://wi-fi-rssi-fall-detection-system.onrender.com/health",
+  "workflow_file": ".github/workflows/keep-dashboard-awake.yml",
+  "qr_generator_file": "generate_dashboard_qr.py",
+  "qr_png_file": "fall_detection_dashboard_qr.png",
+  "note": "Added keep-awake GitHub Actions workflow and dashboard QR generator only."
+}
