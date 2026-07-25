@@ -1777,8 +1777,8 @@ DASHBOARD_HTML = r"""
                     <div class="info-item"><div class="info-label">Classifier</div><div class="info-value">LightGBM</div></div>
                     <div class="info-item"><div class="info-label">Feature Method</div><div class="info-value">Multi-Transform Feature Fusion</div></div>
                     <div class="info-item"><div class="info-label">Feature Order</div><div class="info-value">FFT + STFT + CWT</div></div>
-                    <div class="info-item"><div class="info-label">Decision Threshold</div><div class="info-value">0.25–0.85 — Selected from inner OOF tuning. Fall is detected when Fall Confidence ≥ the threshold.</div></div>
-                    <div class="info-item"><div class="info-label">Dashboard Mode</div><div class="info-value">Official outer-test result lookup</div></div>
+                    <div class="info-item"><div class="info-label">Threshold Rule</div><div class="info-value">Inner-CV tuned, specificity ≥ 0.60.</div></div>
+                    <div class="info-item"><div class="info-label">Dashboard Mode</div><div class="info-value">Saved official test-result lookup</div></div>
                 </div>
             </article>
         </section>
@@ -2050,16 +2050,18 @@ function sanitizeFeatureOrder(value) {
 
 function renderModelInfo() {
     document.getElementById("modelStatus").textContent = "Official Test: MTFF";
-    const thresholdRange = getModelField(["threshold_range"], "0.25–0.85");
-    const thresholdRule = "Selected from inner OOF tuning. Fall is detected when Fall Confidence ≥ the threshold.";
+
+    const thresholdRule = "Inner-CV tuned, specificity ≥ 0.60.";
+
     const items = [
         ["Model", "MTFF (Multi-Transform Feature Fusion)", ""],
         ["Classifier", getModelField(["classifier", "model_type"], "LightGBM"), ""],
         ["Feature Method", "Multi-Transform Feature Fusion", ""],
         ["Feature Order", sanitizeFeatureOrder(getModelField(["feature_order"], "FFT + STFT + CWT")), ""],
-        ["Decision Threshold", `${thresholdRange} — ${thresholdRule}`, ""],
-        ["Dashboard Mode", "Official outer-test result lookup", ""],
+        ["Threshold Rule", thresholdRule, ""],
+        ["Dashboard Mode", "Saved official test-result lookup", ""],
     ];
+
     document.getElementById("modelInfoGrid").innerHTML = items.map(([label, value, secondaryClass]) => `
         <div class="info-item">
             <div class="info-label">${label}</div>
@@ -2182,7 +2184,7 @@ function renderResult() {
 
         <div class="metric-list">
             <div class="metric-row">
-                <span class="metric-label">Decision Threshold</span>
+                <span class="metric-label">Threshold Rule</span>
                 <span class="metric-value">${cleanThreshold(result.threshold)}</span>
             </div>
             <div class="metric-row">

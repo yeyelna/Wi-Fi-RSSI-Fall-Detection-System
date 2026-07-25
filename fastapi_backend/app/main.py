@@ -46,7 +46,7 @@ def root():
         "name": "Wi-Fi RSSI Official Testing Result API",
         "docs": "/docs",
         "health": "/health",
-        "mode": "official_outer_test_lookup",
+        "mode": "saved_official_test_result_lookup",
         "note": "This backend loads saved nested-CV outer-test predictions and does not recompute testing.",
     }
 
@@ -56,7 +56,7 @@ def health():
     return {
         "status": "ok",
         "testing_results_loaded": store.loaded,
-        "mode": "official_outer_test_lookup",
+        "mode": "saved_official_test_result_lookup",
     }
 
 

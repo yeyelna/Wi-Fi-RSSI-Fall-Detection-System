@@ -108,10 +108,10 @@ class OfficialTestingStore:
             "feature_order": "FFT + STFT + CWT",
             "input_features": 384,
             "selected_features": mtff_row.get("NumSelectedFeatures", "Selected by inner CV"),
-            "threshold_range": "0.25–0.85",
-            "threshold_rule": "Selected from inner OOF tuning. Fall is detected when Fall Confidence ≥ the threshold.",
+            "threshold_range": "Inner-CV tuned",
+            "threshold_rule": "Inner-CV tuned, specificity ≥ 0.60.",
             "classification_type": "Binary Classification",
-            "dashboard_mode": "Official outer-test result lookup",
+            "dashboard_mode": "Saved official test-result lookup",
             "official_result_note": "Dashboard loads saved nested-CV outer-test predictions; it does not recompute testing.",
         }
 
