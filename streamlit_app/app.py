@@ -1840,6 +1840,115 @@ DASHBOARD_HTML = r"""
         }
     }
 
+
+
+    /* ABSOLUTE FINAL INPUT PANEL TWO BLUE BOXES */
+    .upload-data-box,
+    .saved-data-box {
+        border: 1px solid #dbeafe !important;
+        border-radius: 0.70rem !important;
+        background: #fbfdff !important;
+        box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03) !important;
+    }
+
+    .upload-data-box {
+        padding: 10px !important;
+        margin-top: 8px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .saved-data-box {
+        padding: 10px !important;
+        margin-top: 10px !important;
+    }
+
+    .upload-data-box label {
+        margin-bottom: 6px !important;
+    }
+
+    .upload-box {
+        min-height: 90px !important;
+        border-radius: 0.58rem !important;
+        background: #ffffff !important;
+    }
+
+    #selectedFileName {
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+    }
+
+    #uploadMessage:empty,
+    #sampleMessage:empty {
+        min-height: 0 !important;
+        height: 0 !important;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    #uploadMessage:not(:empty) {
+        display: block !important;
+        min-height: 48px !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        margin: 6px 0 0 0 !important;
+    }
+
+    #uploadMessage:not(:empty) .message {
+        margin: 0 !important;
+        padding: 8px 10px !important;
+        font-size: 0.64rem !important;
+        line-height: 1.18 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+    }
+
+    #sampleMessage:not(:empty) {
+        min-height: 40px !important;
+        height: auto !important;
+        margin-top: 7px !important;
+        overflow: visible !important;
+    }
+
+    #sampleMessage:not(:empty) .message {
+        margin: 0 !important;
+        padding: 8px 10px !important;
+        font-size: 0.62rem !important;
+        line-height: 1.16 !important;
+        white-space: normal !important;
+    }
+
+    .input-panel {
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+    }
+
+    @media (min-width: 1101px) {
+        .upload-data-box {
+            padding: 9px !important;
+            margin-top: 7px !important;
+            margin-bottom: 10px !important;
+        }
+
+        .saved-data-box {
+            padding: 9px !important;
+            margin-top: 10px !important;
+        }
+
+        .upload-box {
+            min-height: 82px !important;
+        }
+
+        #uploadMessage:not(:empty) {
+            min-height: 48px !important;
+            margin-top: 6px !important;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -1877,9 +1986,10 @@ DASHBOARD_HTML = r"""
                     Upload a .mat testing file to check its official nested-CV outer-test result and display the extracted envelope signal.
                 </p>
 
-                <label for="fileUpload">Upload .mat File</label>
+                <div class="upload-data-box">
+                    <label for="fileUpload">Upload .mat File</label>
 
-                <div class="upload-box">
+                    <div class="upload-box">
                     <input id="fileUpload" type="file" accept=".mat" onchange="handleFileSelect()" />
                     <div>
                         <div class="upload-icon"></div>
