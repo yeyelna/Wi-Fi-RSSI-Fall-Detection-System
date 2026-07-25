@@ -1719,6 +1719,127 @@ DASHBOARD_HTML = r"""
         }
     }
 
+
+
+    /* ABSOLUTE FINAL INPUT PANEL NO-SCROLL FIX */
+    .input-panel {
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+        padding: 14px !important;
+    }
+
+    #uploadMessage:empty,
+    #sampleMessage:empty {
+        min-height: 0 !important;
+        height: 0 !important;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    #uploadMessage:not(:empty) {
+        display: block !important;
+        min-height: 48px !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        margin: 0 0 6px 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    #uploadMessage:not(:empty) .message {
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+        padding: 8px 10px !important;
+        font-size: 0.64rem !important;
+        line-height: 1.16 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    #sampleMessage:not(:empty) {
+        display: block !important;
+        min-height: 40px !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        margin-top: 6px !important;
+    }
+
+    #sampleMessage:not(:empty) .message {
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+        padding: 8px 10px !important;
+        font-size: 0.62rem !important;
+        line-height: 1.16 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+    }
+
+    .saved-data-box {
+        margin-top: 6px !important;
+        padding: 9px !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .saved-data-sub {
+        margin-bottom: 6px !important;
+    }
+
+    .sample-select {
+        min-height: 34px !important;
+        padding: 7px 9px !important;
+    }
+
+    .sample-button {
+        margin-top: 7px !important;
+        padding: 7px 9px !important;
+    }
+
+    @media (min-width: 1101px) {
+        .input-panel {
+            overflow-y: hidden !important;
+            overflow-x: hidden !important;
+            padding: 14px !important;
+        }
+
+        .upload-box {
+            min-height: 78px !important;
+        }
+
+        #selectedFileName {
+            min-height: 14px !important;
+            margin-top: 4px !important;
+            margin-bottom: 0 !important;
+        }
+
+        #uploadMessage:empty,
+        #sampleMessage:empty {
+            min-height: 0 !important;
+            height: 0 !important;
+            max-height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #uploadMessage:not(:empty) {
+            min-height: 48px !important;
+            margin-bottom: 6px !important;
+        }
+
+        #sampleMessage:not(:empty) {
+            min-height: 40px !important;
+        }
+    }
+
 </style>
 </head>
 <body>
