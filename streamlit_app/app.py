@@ -1969,6 +1969,150 @@ DASHBOARD_HTML = r"""
         }
     }
 
+
+
+    /* ABSOLUTE FINAL INPUT PANEL: two separate option boxes */
+    .input-panel {
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+        padding: 14px !important;
+    }
+
+    .upload-only-note {
+        margin: 0 0 9px !important;
+        font-size: 0.66rem !important;
+        line-height: 1.24 !important;
+    }
+
+    .upload-testing-box,
+    .saved-data-box {
+        border: 1px solid #dbeafe !important;
+        border-radius: 0.70rem !important;
+        background: #fbfdff !important;
+        box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03) !important;
+    }
+
+    .upload-testing-box {
+        padding: 9px !important;
+        margin: 0 0 10px 0 !important;
+    }
+
+    .saved-data-box {
+        padding: 9px !important;
+        margin: 10px 0 0 0 !important;
+    }
+
+    .input-box-title,
+    .saved-data-title {
+        color: var(--foreground) !important;
+        font-size: 0.74rem !important;
+        font-weight: 600 !important;
+        margin-bottom: 3px !important;
+    }
+
+    .input-box-sub,
+    .saved-data-sub {
+        color: var(--muted-foreground) !important;
+        font-size: 0.60rem !important;
+        line-height: 1.18 !important;
+        margin-bottom: 7px !important;
+    }
+
+    .upload-testing-box label {
+        margin-bottom: 4px !important;
+        font-size: 0.64rem !important;
+    }
+
+    .upload-box {
+        min-height: 74px !important;
+        padding: 9px !important;
+        border-radius: 0.58rem !important;
+        background: #ffffff !important;
+    }
+
+    .upload-main {
+        font-size: 0.70rem !important;
+    }
+
+    .upload-sub {
+        font-size: 0.60rem !important;
+    }
+
+    #selectedFileName {
+        margin-top: 5px !important;
+        margin-bottom: 0 !important;
+        min-height: 14px !important;
+        font-size: 0.62rem !important;
+        line-height: 1.15 !important;
+    }
+
+    #uploadMessage:empty,
+    #sampleMessage:empty {
+        min-height: 0 !important;
+        height: 0 !important;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    #uploadMessage:not(:empty) {
+        display: block !important;
+        min-height: 44px !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        margin: 7px 0 0 0 !important;
+    }
+
+    #uploadMessage:not(:empty) .message {
+        margin: 0 !important;
+        padding: 7px 9px !important;
+        font-size: 0.60rem !important;
+        line-height: 1.16 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+    }
+
+    .sample-select {
+        min-height: 32px !important;
+        padding: 7px 9px !important;
+        font-size: 0.64rem !important;
+    }
+
+    .sample-button {
+        margin-top: 7px !important;
+        padding: 7px 9px !important;
+        font-size: 0.64rem !important;
+    }
+
+    #sampleMessage:not(:empty) {
+        min-height: 38px !important;
+        height: auto !important;
+        margin-top: 7px !important;
+        overflow: visible !important;
+    }
+
+    #sampleMessage:not(:empty) .message {
+        margin: 0 !important;
+        padding: 7px 9px !important;
+        font-size: 0.60rem !important;
+        line-height: 1.16 !important;
+        white-space: normal !important;
+    }
+
+    @media (max-width: 768px) {
+        .input-panel {
+            overflow-y: visible !important;
+        }
+
+        .upload-box {
+            min-height: 78px !important;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -2003,26 +2147,27 @@ DASHBOARD_HTML = r"""
                 <h2 class="section-title">Input Panel</h2>
 
                 <p class="helper-text upload-only-note">
-                    Upload a .mat testing file to check its official nested-CV outer-test result and display the extracted envelope signal.
+                    Choose an option: upload a .mat testing file or select saved testing data to view the official result.
                 </p>
 
                 <div class="upload-testing-box">
                     <div class="input-box-title">Upload Testing Data</div>
-                    <div class="input-box-sub">Upload a .mat testing file to check its official result.</div>
+                    <div class="input-box-sub">Upload your own .mat testing file.</div>
 
                     <label for="fileUpload">Upload .mat File</label>
 
                     <div class="upload-box">
-                    <input id="fileUpload" type="file" accept=".mat" onchange="handleFileSelect()" />
-                    <div>
-                        <div class="upload-icon"></div>
-                        <div class="upload-main">Click to browse</div>
-                        <div class="upload-sub">Accepted: .mat</div>
+                        <input id="fileUpload" type="file" accept=".mat" onchange="handleFileSelect()" />
+                        <div>
+                            <div class="upload-icon"></div>
+                            <div class="upload-main">Click to browse</div>
+                            <div class="upload-sub">Accepted: .mat</div>
+                        </div>
                     </div>
-                </div>
 
-                <div id="selectedFileName" class="helper-text">No file selected</div>
-                <div id="uploadMessage"></div>
+                    <div id="selectedFileName" class="helper-text">No file selected</div>
+                    <div id="uploadMessage"></div>
+                </div>
 
                 <div class="saved-data-box">
                     <div class="saved-data-title">Saved Testing Data</div>
