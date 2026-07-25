@@ -50,9 +50,9 @@ def main() -> None:
     except Exception:
         write_embedded_qr(output_path)
 
-    print("QR code generated successfully!")
-    print("Dashboard URL: " + DASHBOARD_URL)
-    print("Saved as: " + str(output_path))
+    pass  # console output suppressed
+    pass  # console output suppressed
+    pass  # console output suppressed
 
 
 if __name__ == "__main__":
