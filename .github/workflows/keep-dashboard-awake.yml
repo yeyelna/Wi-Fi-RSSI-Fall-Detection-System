@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Ping Streamlit dashboard
         run: |
-          curl -L -A "Mozilla/5.0" --max-time 120 "https://fall-detection-yeyelna.streamlit.app/" || true
+          curl -L --max-time 60 "https://fall-detection-yeyelna.streamlit.app/" || true
 
       - name: Ping Render backend
         run: |
-          curl -L -A "Mozilla/5.0" --max-time 120 "https://wi-fi-rssi-fall-detection-system.onrender.com/health" || true
+          curl -L --max-time 60 "https://wi-fi-rssi-fall-detection-system.onrender.com/health" || true
