@@ -1,0 +1,19 @@
+name: Keep Dashboard Awake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping-dashboard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Streamlit dashboard
+        run: |
+          curl -L --max-time 60 "https://fall-detection-yeyelna.streamlit.app/" || true
+
+      - name: Ping Render backend
+        run: |
+          curl -L --max-time 60 "https://wi-fi-rssi-fall-detection-system.onrender.com/health" || true
