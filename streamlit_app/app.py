@@ -1627,6 +1627,98 @@ DASHBOARD_HTML = r"""
         }
     }
 
+
+
+    /* ABSOLUTE FINAL INPUT WARNING FIX: keep upload warning fully visible */
+    #uploadMessage {
+        display: block !important;
+        min-height: 58px !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+        margin: 0 0 8px 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    #uploadMessage .message {
+        margin-top: 6px !important;
+        margin-bottom: 8px !important;
+        padding: 9px 10px !important;
+        font-size: 0.68rem !important;
+        line-height: 1.22 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .saved-data-box {
+        margin-top: 6px !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    #sampleMessage {
+        display: block !important;
+        min-height: 46px !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+        margin-top: 6px !important;
+    }
+
+    #sampleMessage .message {
+        margin-top: 6px !important;
+        padding: 8px 10px !important;
+        font-size: 0.66rem !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+    }
+
+    .input-panel {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    @media (min-width: 1101px) {
+        #uploadMessage {
+            min-height: 58px !important;
+            max-height: none !important;
+            overflow: visible !important;
+            margin-bottom: 8px !important;
+        }
+
+        #uploadMessage .message {
+            margin-top: 6px !important;
+            margin-bottom: 8px !important;
+            padding: 8px 10px !important;
+            font-size: 0.64rem !important;
+            line-height: 1.2 !important;
+            max-height: none !important;
+            overflow: visible !important;
+        }
+
+        #sampleMessage {
+            min-height: 42px !important;
+            max-height: none !important;
+            overflow: visible !important;
+        }
+
+        #sampleMessage .message {
+            font-size: 0.62rem !important;
+            line-height: 1.18 !important;
+        }
+
+        .saved-data-box {
+            margin-top: 4px !important;
+        }
+    }
+
 </style>
 </head>
 <body>
