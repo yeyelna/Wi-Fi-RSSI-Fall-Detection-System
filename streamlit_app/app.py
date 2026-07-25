@@ -2113,6 +2113,25 @@ DASHBOARD_HTML = r"""
         }
     }
 
+
+
+    /* ABSOLUTE FINAL HEADER CREATOR NAME */
+    .header-owner {
+        margin: 5px 0 0 !important;
+        color: #64748b !important;
+        font-size: clamp(0.78rem, 0.95vw, 0.88rem) !important;
+        line-height: 1.25 !important;
+        font-weight: 500 !important;
+        letter-spacing: -0.006em !important;
+    }
+
+    @media (max-width: 768px) {
+        .header-owner {
+            font-size: 0.76rem !important;
+            margin-top: 4px !important;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -2123,6 +2142,7 @@ DASHBOARD_HTML = r"""
             <div class="brand-text">
                 <h1 class="header-title">Wi-Fi RSSI Fall Detection System</h1>
                 <p class="header-subtitle">Official nested-CV outer-test result explorer for Wi-Fi RSSI fall detection</p>
+                <p class="header-owner">Created by Nurellyana Izzati binti Mohd Nazri</p>
             </div>
         </div>
         <div class="status-grid">
